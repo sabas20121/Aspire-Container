@@ -1,0 +1,45 @@
+{
+    "Port": {
+        "ProxyPort": 446,
+        "AspirePort": 443,
+        "GraphExplorerPort": 442
+    },
+    "SSL": {
+        "SSL_Certificate": "/home/ec2-user/server.crt",
+        "SSL_Key": "/home/ec2-user/server.key"
+    },
+    "QSConfiguration": {
+        "AllowedDomainList": [
+            "http://localhost:443",
+            "http://localhost:3000",
+            "https://ec2-18-117-81-12.us-east-2.compute.amazonaws.com"
+        ],
+        "awsAccountId": "768612497542",
+        "dashBoardRegion": "us-east-2",
+        "identityRegion": "us-east-1",
+        "roleArn": "arn:aws:iam::768612497542:role/Optimizer",
+        "identityType": "IAM",
+        "externalLoginFederationProviderType": "CUSTOM_OIDC",
+        "namespace": "default"
+    },
+    "GraphConfiguration": {
+        "Connection_ID": "",
+        "Connection_Name": "Connection",
+        "GRAPH_EXP_PUBLIC_OR_PROXY_ENDPOINT": "https://ec2-3-21-231-78.us-east-2.compute.amazonaws.com",
+        "GRAPH_EXP_GRAPH_TYPE": "gremlin",
+        "GRAPH_EXP_USING_PROXY_SERVER": true,
+        "GRAPH_EXP_CONNECTION_URL": "https://pwc-database.cluster-ck7khyrinfbh.us-east-2.neptune.amazonaws.com:8182",
+        "GRAPH_EXP_IAM": false,
+        "GRAPH_EXP_AWS_REGION": "",
+        "enableCache": true,
+        "cacheTimeMs": 600000
+    },
+    "ClientDetails": {
+        "cognitoClientId": "tk8na4d5u0tn4n23s9imthk5c",
+        "cognitoDomainUrl": "https://optimizersampledomain.auth.us-east-2.amazoncognito.com"
+    },
+    "InstanceURL": {
+        "GEInstanceURL": "https://ec2-18-117-81-12.us-east-2.compute.amazonaws.com:442",
+        "ProxyEndpointURL": "https://ec2-18-117-81-12.us-east-2.compute.amazonaws.com:446"
+    }
+}
