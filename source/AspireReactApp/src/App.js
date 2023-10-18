@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import jwt_decode from 'jwt-decode';
-import axios from 'axios';
 import Home from './pages/home/Home.js'
 import Login from './pages/login/Login.js'
 import { SessionManager } from './services/SessionManager.js'
@@ -8,13 +6,11 @@ import { CookieManager } from './services/CookieManager.js'
 import GridReport from './pages/reports/GridReport.js';
 import './App.css'
 import '@fontsource-variable/open-sans'
-const MetaData = require('./MetaData.json')
 
 function App() {
 
   const [reportKey, setReportKey] = useState(null);
   const [columnFilters, setColumnFilters] = useState({});
-  const ProxyEndpointURL = MetaData.InstanceURL.ProxyEndpointURL
 
   useEffect(() => {
 
@@ -43,9 +39,27 @@ function App() {
   }, []);
 
   const fetchReportMetaData = () => {
-    axios.get(`${ProxyEndpointURL}/reportMetaData`)
+    const payload = { };
+  
+    fetch('/api/aspire/fetch-ReportMetaData', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    })
       .then((response) => {
-        localStorage.setItem('ReportMetaData', JSON.stringify(response.data.reportMetaData));
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        if (data && data.data && data.data.reportMetaData) {
+          localStorage.setItem('ReportMetaData', JSON.stringify(data.data.reportMetaData));
+        } else {
+          console.error('Error: Invalid response data format.');
+        }
       })
       .catch((error) => {
         console.error('Error fetching report data:', error);

@@ -52,6 +52,7 @@ app.get('*', (req, res) => {
 });
 
 const server = https.createServer(serverOptions, app);
+// const port = 443;
 
 server.listen(port, () => {
     console.log(`Aspire Server running on port ${port}`);

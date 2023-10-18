@@ -10,7 +10,7 @@ const namespace = MetaData.QSConfiguration.namespace;
 const roleArn = MetaData.QSConfiguration.roleArn;
 const roleName = roleArn.split('/')[1];
 
-const quicksightClient = new QuickSightClient(dashboardRegion)
+const quickSightClient = new QuickSightClient(dashboardRegion);
 
 async function searchDashboards(openIdToken) {
     const decodedToken = jwt_decode(openIdToken);
@@ -26,7 +26,7 @@ async function searchDashboards(openIdToken) {
     ];
 
     try {
-        const dashboardListResponse = await quicksightClient.client.searchDashboards({
+        const dashboardListResponse = await quickSightClient.client.searchDashboards({
             AwsAccountId: awsAccountId,
             MaxResults: 100,
             Filters: dashboardFilters,
@@ -50,7 +50,7 @@ async function generateDashboardURLForRegisteredUser(openIdToken) {
 
 
     try {
-        const dashboardLURL = await quicksightClient.client.generateEmbedUrlForRegisteredUser({
+        const dashboardLURL = await quickSightClient.client.generateEmbedUrlForRegisteredUser({
             AwsAccountId: awsAccountId,
             ExperienceConfiguration: { 'Dashboard': { 'InitialDashboardId': 'non-existent-id' } },
             UserArn: userArn,
@@ -73,7 +73,7 @@ async function generateSelfServiceURLForRegisteredUser(openIdToken) {
     let userArn = `arn:aws:quicksight:${identityRegion}:${awsAccountId}:user/${namespace}/${roleName}/${userName}`;
 
     try {
-        const selfServiceURL = await quicksightClient.client.generateEmbedUrlForRegisteredUser({
+        const selfServiceURL = await quickSightClient.client.generateEmbedUrlForRegisteredUser({
             AwsAccountId: awsAccountId,
             ExperienceConfiguration: { 'Dashboard': { 'InitialDashboardId': 'non-existent-id' } },
             UserArn: userArn,
@@ -96,7 +96,7 @@ async function generateAskMeURLForRegisteredUser(openIdToken) {
     let userArn = `arn:aws:quicksight:${identityRegion}:${awsAccountId}:user/${namespace}/${roleName}/${userName}`;
 
     try {
-        const askMeURL = await quicksightClient.client.generateEmbedUrlForRegisteredUser({
+        const askMeURL = await quickSightClient.client.generateEmbedUrlForRegisteredUser({
             AwsAccountId: awsAccountId,
             ExperienceConfiguration: { 'Dashboard': { 'InitialDashboardId': 'non-existent-id' } },
             UserArn: userArn,
