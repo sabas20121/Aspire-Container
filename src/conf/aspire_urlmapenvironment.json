@@ -1,0 +1,9 @@
+{
+  "production": {
+    "fetchDashboardList": "/api/aspire/fetch-DashboardList",
+    "fetchDashboardURL": "/api/aspire/fetch-DashboardURL",
+    "fetchSelfServiceURL": "/api/aspire/fetch-SelfServiceURL",
+    "fetchAskMeURL": "/api/aspire/fetch-AskMeURL",
+    "fetchReportMetaData": "/api/aspire/fetch-ReportMetaData"
+  }
+}

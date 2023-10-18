@@ -1,0 +1,34 @@
+[
+  {
+    "key": "overview",
+    "label": "Overview",
+    "panel": "Analytics",
+    "dynamicUrl": "https://www.google.com",
+    "InitialDashboardId": "e6fa5d86-58b1-4446-ac79-436ebc9efe7f",
+    "url": ""
+  },
+  {
+    "key": "control",
+    "label": "Control Canvas",
+    "panel": "Welcome to Control Panel",
+    "dynamicUrl": "https://www.gfg.com",
+    "InitialDashboardId": "5793490b-e750-4191-8846-21ada7fd3fcf",
+    "url": ""
+  },
+  {
+    "key": "issue",
+    "label": "Issue Canvas",
+    "panel": "Welcome to Issue Panel",
+    "dynamicUrl": "https://www.w3schools.com",
+    "InitialDashboardId": "b95bbfa4-c3b4-498d-9b15-ec1c14e7e510",
+    "url": ""
+  },
+  {
+    "key": "demo",
+    "label": "Demo Canvas",
+    "panel": "Welcome to Issue Panel",
+    "dynamicUrl": "https://www.w3schools.com",
+    "InitialDashboardId": "b95bbfa4-c3b4-498d-9b15-ec1c14e7e510",
+    "url": ""
+  }
+]

@@ -1,0 +1,84 @@
+/* ReportList.css */
+
+.ag-theme-aispire {
+  --ag-header-background-color: #f3f5f8;
+  --ag-font-family: Open Sans Variable;
+  --ag-font-size: 12px;
+  --ag-cell-horizontal-padding: 40px;
+  --ag-font-weight: 800;
+  --ag-header-height: 32px;
+  --ag-borders: none;
+  --ag-cell-horizontal-padding: 44px;
+  --ag-data-color: #10052f;
+}
+
+.ag-header-cell {
+  padding-left: 24px;
+}
+
+.ag-header-cell-text {
+  color: #403759;
+  font-family: Open Sans Variable;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.reports-title-container {
+  display: flex;
+  align-items: center;
+  width: 108px;
+  height: 30px;
+}
+
+.reports-title {
+  &.MuiTypography-root {
+    color: #403759;
+    font-family: Open Sans Variable;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+  }
+}
+
+.reports-search-container {
+  position: relative;
+  margin-right: 24px;
+}
+
+.reports-search {
+  display: flex;
+  width: 200px;
+  border-radius: 4px;
+  border: 1px solid #cfcdd5;
+  padding: 8px 10px 8px 16px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.reports-search-input {
+  .MuiInputBase-root {
+    width: 200px;
+    height: 36px;
+  }
+}
+
+.reports-appbar {
+  &.MuiAppBar-root {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    box-shadow: 0px 0px 0px 0px;
+  }
+}
+
+.reports-toolbar {
+  display: flex;
+  justify-content: space-between;
+  &.MuiToolbar-root {
+    min-height: 60px;
+  }
+}

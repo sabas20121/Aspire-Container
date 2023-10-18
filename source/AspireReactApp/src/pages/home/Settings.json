@@ -1,0 +1,9 @@
+[
+    {
+        "key": "profile",
+        "path": "/profile",
+        "icon": "avatar",
+        "component": "profile",
+        "tooltip": "Access your profile details"
+    }
+]

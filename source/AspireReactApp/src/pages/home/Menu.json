@@ -1,0 +1,23 @@
+[
+    {
+        "key": "askme",
+        "title": "Ask Me",
+        "tooltip": "You can search questions or choose from recently searched",
+        "icon": "chatquestionicon",
+        "component": "askme"
+    },
+    {
+        "key": "dashboard",
+        "title": "Dashboard",
+        "tooltip": "You can choose from the available dashboard options",
+        "path": "/dashboard",
+        "icon": "dashboard"
+    },
+    {
+        "key": "graph",
+        "title": "GRC Knowledge Graph",
+        "tooltip": "Access Knowledge Graph",
+        "path": "/graph",
+        "icon": "graph"
+    }
+]

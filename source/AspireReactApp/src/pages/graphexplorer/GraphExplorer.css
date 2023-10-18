@@ -1,0 +1,15 @@
+.GraphExplorer-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #403759;
+  z-index: 1;
+  overflow-y: hidden;
+}
+.GraphExplorer-iframe {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin-top: 13px;
+  background-color: white;
+}

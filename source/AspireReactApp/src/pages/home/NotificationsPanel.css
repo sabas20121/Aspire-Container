@@ -1,0 +1,58 @@
+.Notifications-panel-container {
+  width: 800px;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  background-color: white;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.Notifications-header-container {
+  display: flex;
+  width: 756px;
+  height: 36px;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: space-between;
+  margin-top: 12px;
+  margin-left: 22px;
+}
+
+.Notifications-title-container {
+  display: flex;
+  width: 154px;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.Notifications-icon-container {
+  width: 32px;
+  height: 32px;
+  background-color: #403759;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+
+.Notifications-title-text {
+  &.MuiTypography-root {
+    color: #403759;
+    font-family: Open Sans Variable;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+  }
+}
+
+.Notifications-search {
+  width: 160px;
+  height: 36px;
+  &.MuiInputBase-input-MuiOutlinedInput-input {
+    padding: 8px 10px 8px 16px;
+  }
+}

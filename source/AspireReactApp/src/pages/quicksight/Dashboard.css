@@ -1,0 +1,91 @@
+#Dashboard-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  background-color: #403759;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.Tabs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.TabList {
+  display: flex;
+  flex-direction: row;
+  height: 35px;
+  background-color: transparent;
+  margin: 13px 0px 0px -40px;
+  border: 1;
+  gap: 8px;
+}
+
+.Tab {
+  display: flex;
+  background-color: #58506d;
+  border-radius: 4px 4px 0px 0px;
+  order: 1;
+  padding: 8px 16px;
+}
+
+.Tab-button-label {
+  &.MuiTypography-root {
+    font-family: Open Sans Variable;
+    color: white;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: normal;
+  }
+}
+
+.Tab-button-label-active {
+  &.MuiTypography-root {
+    font-family: Open Sans Variable;
+    color: #403759;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: normal;
+  }
+}
+
+.TabPanelContainer {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.TabPanel {
+  /* flex: 1; */
+  /* display: flex; */
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.iframe {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+
+.SelfService-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #403759;
+  overflow-y: hidden;
+  z-index: 1;
+}
+
+.SelfService-iframe {
+  width: 100%;
+  height: 100%;
+  margin-top: 13px;
+  background-color: white;
+}

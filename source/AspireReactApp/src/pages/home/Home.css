@@ -1,0 +1,209 @@
+.Home {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+}
+
+.LeftPanel {
+  display: flex;
+  background-color: #403759;
+  height: 100%;
+  width: 266px;
+  flex-direction: column;
+  transition: width 0.3s;
+}
+
+.LeftPanel-closed {
+  width: 64px;
+}
+
+.Brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 48px 24px 48px;
+}
+
+.Brand-closed {
+  animation-fill-mode: forwards;
+  padding: 24px 16px 40px 16px;
+}
+
+.List-main {
+  &.MuiList-root {
+    width: 250px;
+    padding: 0px 0px 0px 8px;
+  }
+}
+
+.List-main-closed {
+  transition: width 0.5s step-end;
+
+  &.MuiList-root {
+    width: 50px;
+    padding: 0px 0px 0px 8px;
+  }
+}
+
+.Listitem-button {
+  width: 250px;
+  height: 44px;
+
+  &.MuiListItemButton-root {
+    padding: 0px 0px 0px 0px;
+  }
+}
+
+.List-geticon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 44px;
+}
+
+.List-item-text {
+  &.MuiTypography-root {
+    font-family: Open Sans Variable;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ebeaf7;
+    text-transform: capitalize;
+  }
+}
+
+.Config-container {
+  position: absolute;
+  bottom: 0;
+  /* width: 250px;
+  height: 132px; */
+  padding-bottom: 8px;
+}
+
+.Profile-avatar {
+  &.MuiAvatar-root {
+    background-color: white;
+  }
+}
+
+.Profile-avatar-text {
+  &.MuiTypography-root {
+    font-size: 12px;
+    font-weight: 700;
+    font-family: Open Sans Variable;
+    color: #403759;
+  }
+}
+
+.Config-copyright-container {
+  display: flex;
+  flex-direction: row;
+  height: 16px;
+  padding-top: 16px;
+  padding-left: 17px;
+  padding-right: 4px;
+  animation: 1s fadeIn;
+}
+
+.Config-copyright-container-closed {
+  animation: fadeOut 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.Config-copyright-text {
+  &.MuiTypography-root {
+    font-family: Open Sans Variable;
+    font-size: 11px;
+    font-weight: light;
+    letter-spacing: 0em;
+    padding-left: 4px;
+    color: white;
+  }
+}
+
+.Toggle-container {
+  width: 24px;
+  height: 24px;
+  border-radius: 20px;
+  border-color: 20px;
+  box-shadow: 0px 4px 12px 0px #000000c8;
+  background-color: white;
+  top: 80px;
+  left: 254px;
+  position: absolute;
+  z-index: 3;
+  animation: fadeOutIn 0.35s ease-in;
+}
+
+.Toggle-container-closed {
+  top: 88px;
+  left: 54px;
+}
+
+.Toggle-button {
+  &.MuiIconButton-root {
+    width: 24px;
+    height: 24px;
+    border-radius: 20px;
+    padding: 0px;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutIn {
+  0% {
+    opacity: 1;
+  }
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.Tooltip-text {
+  &.MuiTypography-root {
+    font-family: Open Sans Variable;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 16px;
+    color: white;
+  }
+}
+
+.AskMe-button {
+  &.MuiButton-root {
+    width: 250px;
+    height: 44px;
+    padding: 0px 0px 0px 4px;
+    justify-content: flex-start;
+  }
+}
+
+/* ////////////////// */
