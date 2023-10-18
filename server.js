@@ -4,12 +4,12 @@ const fs = require('fs');
 const path = require('path');
 const app = express();
 
-// const MetaData = require('./MetaData.json')
-// const port = MetaData.Port.AspirePort;
-// const serverOptions = {
-//     key: fs.readFileSync(MetaData.SSL.SSL_Key),
-//     cert: fs.readFileSync(MetaData.SSL.SSL_Certificate)
-// };
+ const MetaData = require('./MetaData.json')
+ const port = MetaData.Port.AspirePort;
+ const serverOptions = {
+     key: fs.readFileSync('../server.key'),
+     cert: fs.readFileSync('../server.crt')
+ };
 
 const cors = require('cors');
 const helmet = require('helmet');
@@ -25,11 +25,11 @@ app.use(
 
 const getDashboardList = require('./src/routes/GetDashboardListRouter');
 const getDashboardURL = require('./src/routes/GetDashboardURLRouter');
-const getSelfServiseURL = require('./src/routes/GetSelfServiceURLRouter');
+const getSelfServiceURL = require('./src/routes/GetSelfServiceURLRouter');
 const getAskMeURL = require('./src/routes/GetAskMeURLRouter');
 const getReportMetaData = require('./src/routes/GetReportMetaDataRouter');
 
-const JsonFileLoader = require('./src/util/JsonFileLoader');
+const JsonFileLoader = require('./src/utils/JsonFileLoader');
 const jsonFileLoader = new JsonFileLoader();
 const endpointJson = jsonFileLoader.readJsonFile('./src/conf/aspire_urlmapenvironment.json');
 
@@ -51,9 +51,8 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-// const server = https.createServer(serverOptions, app);
-const port = 443;
+const server = https.createServer(serverOptions, app);
 
-app.listen(port, () => {
+server.listen(port, () => {
     console.log(`Aspire Server running on port ${port}`);
 });
