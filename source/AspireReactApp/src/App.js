@@ -55,8 +55,8 @@ function App() {
         return response.json();
       })
       .then((data) => {
-        if (data && data.data && data.data.reportMetaData) {
-          localStorage.setItem('ReportMetaData', JSON.stringify(data.data.reportMetaData));
+        if (data) {
+          localStorage.setItem('ReportMetaData', JSON.stringify(data));
         } else {
           console.error('Error: Invalid response data format.');
         }
