@@ -1,9 +1,9 @@
 {
   "production": {
-    "fetchDashboardList": "/api/aspire/fetch-DashboardList",
-    "fetchDashboardURL": "/api/aspire/fetch-DashboardURL",
-    "fetchSelfServiceURL": "/api/aspire/fetch-SelfServiceURL",
-    "fetchAskMeURL": "/api/aspire/fetch-AskMeURL",
-    "fetchReportMetaData": "/api/aspire/fetch-ReportMetaData"
+    "fetchDashboardList": "/metricstream/api/tasks/fetch-DashboardList",
+    "fetchDashboardURL": "/metricstream/api/tasks/fetch-DashboardURL",
+    "fetchSelfServiceURL": "/metricstream/api/tasks/fetch-SelfServiceURL",
+    "fetchAskMeURL": "/metricstream/api/tasks/fetch-AskMeURL",
+    "fetchReportMetaData": "/metricstream/api/tasks/fetch-ReportMetaData"
   }
 }

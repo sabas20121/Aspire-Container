@@ -41,7 +41,7 @@ function App() {
   const fetchReportMetaData = () => {
     const payload = { };
   
-    fetch('/api/aspire/fetch-ReportMetaData', {
+    fetch('/metricstream/api/tasks/fetch-ReportMetaData', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

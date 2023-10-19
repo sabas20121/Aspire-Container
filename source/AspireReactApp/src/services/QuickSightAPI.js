@@ -8,7 +8,7 @@ const QuickSightAPI = (() => {
         const payload = {
                     openIdToken: User.getUser().getOpenIdToken()
                   };
-        let apiUrl = `/api/aspire/${endPointAPI}`;
+        let apiUrl = `/metricstream/api/tasks/${endPointAPI}`;
         return fetch(apiUrl, {
                 method: 'POST',
                 headers: {
