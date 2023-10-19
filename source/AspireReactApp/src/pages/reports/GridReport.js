@@ -38,42 +38,40 @@ function GridReport({ reportKey, columnFilters }) {
 
   const reportMetaData = localStorage.getItem('ReportMetaData');
   const AGGridReportMetaData = reportMetaData ? JSON.parse(reportMetaData) : [];
-  const Metadata = require('../../MetaData.json')
-  const ProxyEndpointURL = Metadata.InstanceURL.ProxyEndpointURL;
+
   useEffect(() => {
 
-      // if (reportKey === 'Trending_Issues' && columnFilters.ISSUE_IDENTIFIED_ON) {
-      //     columnFilters.ISSUE_IDENTIFIED_ON = formatDate(columnFilters.ISSUE_IDENTIFIED_ON);
-      //   }
+    // if (reportKey === 'Trending_Issues' && columnFilters.ISSUE_IDENTIFIED_ON) {
+    //     columnFilters.ISSUE_IDENTIFIED_ON = formatDate(columnFilters.ISSUE_IDENTIFIED_ON);
+    //   }
 
-      if (reportKey) {
-        const report = AGGridReportMetaData.find((item) => item.key === reportKey)
-        if (report) {
-          const { reportName, url, columnDefs } = report
-          setReportName(reportName)
-          const TenantId = Metadata.TenantDetails.tenantID;
-          const parts = url.split('/');
-          const pathWithFilename = parts.slice(3).join('/');
-          const payload = {
-            tenantId: TenantId,
-            fileName: `${pathWithFilename}`
-          };
-          fetchCsvData(payload)
-            .then((jsonData) => {
-              setRowData(jsonData)
-              setOriginalData(jsonData)
-              setColumnDefs(columnDefs)
-              applyColumnFilters(jsonData, columnFilters)
-              setIsLoading(false)
-            })
-            .catch((error) => {
-              console.error('Error fetching CSV data:', error)
-              setIsLoading(false)
-            })
+    if (reportKey) {
+      const report = AGGridReportMetaData.find((item) => item.key === reportKey)
+      if (report) {
+        const { reportName, url, columnDefs } = report
+        setReportName(reportName)
+        const urlParts = url.split('/');
+        const payload = {
+          bucketName: urlParts[2],
+          path: urlParts.slice(3, urlParts.length - 1).join('/'),
+          fileName: urlParts[urlParts.length - 1]
+        };
+        fetchCsvData(payload)
+          .then((jsonData) => {
+            setRowData(jsonData)
+            setOriginalData(jsonData)
+            setColumnDefs(columnDefs)
+            applyColumnFilters(jsonData, columnFilters)
+            setIsLoading(false)
+          })
+          .catch((error) => {
+            console.error('Error fetching CSV data:', error)
+            setIsLoading(false)
+          })
 
-        }
       }
-    }, [reportKey, columnFilters]);
+    }
+  }, [reportKey, columnFilters]);
 
   // const formatDate = (inputDate) => {
   //   const dateObj = new Date(inputDate);
@@ -84,20 +82,20 @@ function GridReport({ reportKey, columnFilters }) {
   //   return year;
   // };
 
-    const fetchCsvData = (payload) => {
-      const apiUrl = `${ProxyEndpointURL}/api/aspire/fetch-s3-bucket`;
-      return fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      })
-        .then((response) => response.json())
-        .catch((error) => {
-          console.error('Error fetching CSV data:', error);
-        });
-    }
+  const fetchCsvData = (payload) => {
+    const apiUrl = `/metricstream/api/fetch-reportobjects`;
+    return fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    })
+      .then((response) => response.json())
+      .catch((error) => {
+        console.error('Error fetching CSV data:', error);
+      });
+  }
   const applyColumnFilters = (data, filters) => {
     let filteredData = data
     filteredData = filteredData.filter((row) => {
