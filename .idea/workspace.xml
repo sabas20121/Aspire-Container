@@ -6,21 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cec8fa52-e7fd-4273-ba35-a8bd49b506bc" name="Changes" comment="redo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MetaData.json" beforeDir="false" afterPath="$PROJECT_DIR$/MetaData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/build/static/js/main.151a0b48.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/build/static/js/main.151a0b48.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/build/static/js/main.151a0b48.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/GraphExplorer/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/source/GraphExplorer/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/GraphExplorer/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/source/GraphExplorer/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/ReportMetaDataController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ReportMetaDataController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/AskMeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/AskMeController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/QuickSightService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/QuickSightService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,13 +25,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projects/GIT/Aspire-Container&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/Projects/GIT/PSNL/Aspire-Container"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Aspire-Container" />
@@ -105,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697644009025</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="redo">
+      <created>1697694651998</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1697694651998</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

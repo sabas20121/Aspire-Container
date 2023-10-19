@@ -75,7 +75,7 @@ async function generateSelfServiceURLForRegisteredUser(openIdToken) {
     try {
         const selfServiceURL = await quickSightClient.client.generateEmbedUrlForRegisteredUser({
             AwsAccountId: awsAccountId,
-            ExperienceConfiguration: { 'Dashboard': { 'InitialDashboardId': 'non-existent-id' } },
+            ExperienceConfiguration: { 'QuickSightConsole': { 'InitialPath': '/start/favorites' } },
             UserArn: userArn,
             AllowedDomains: allowedDomains,
             SessionLifetimeInMinutes: 60,
@@ -98,7 +98,7 @@ async function generateAskMeURLForRegisteredUser(openIdToken) {
     try {
         const askMeURL = await quickSightClient.client.generateEmbedUrlForRegisteredUser({
             AwsAccountId: awsAccountId,
-            ExperienceConfiguration: { 'Dashboard': { 'InitialDashboardId': 'non-existent-id' } },
+            ExperienceConfiguration: { 'QSearchBar': {} },
             UserArn: userArn,
             AllowedDomains: allowedDomains,
             SessionLifetimeInMinutes: 60,

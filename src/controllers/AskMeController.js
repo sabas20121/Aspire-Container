@@ -7,12 +7,7 @@ async function generateAskMeURL(req, res) {
     try {
         const response = await QuickSightService.generateAskMeURLForRegisteredUser(openIdToken);
 
-        res.json({
-            status: 200,
-            body: {
-                DashboardURL: response,
-            }
-        });
+        res.json(response);
     } catch (err) {
         console.error('Error generating QuickSight Ask-Me URL:', err);
         res.status(500).json({ error: 'Error generating QuickSight Ask-Me URL' });
