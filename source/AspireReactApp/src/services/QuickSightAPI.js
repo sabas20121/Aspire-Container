@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { User } from "./User";
-const MetaData = require('../MetaData.json')
 const QuickSightAPI = (() => {
 
     function fetchAndParseResponse(endPointAPI) {

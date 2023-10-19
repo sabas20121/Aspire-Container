@@ -51,10 +51,16 @@ function GridReport({ reportKey, columnFilters }) {
         const { reportName, url, columnDefs } = report
         setReportName(reportName)
         const urlParts = url.split('/');
+        let s3Region;
+        const s3RegionExt = url.match(/\.s3\.(.*?)\.amazonaws\.com/);
+        if (s3RegionExt && s3RegionExt.length > 1) {
+          s3Region = s3RegionExt[1];
+        }
         const payload = {
           bucketName: urlParts[2],
           path: urlParts.slice(3, urlParts.length - 1).join('/'),
-          fileName: urlParts[urlParts.length - 1]
+          fileName: urlParts[urlParts.length - 1],
+          s3Region: s3Region
         };
         fetchCsvData(payload)
           .then((jsonData) => {

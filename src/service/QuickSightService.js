@@ -1,5 +1,5 @@
 const jwt_decode = require('jwt-decode');
-const MetaData = require('../../MetaData.json');
+const MetaData = require('../../../MetaData.json');
 const QuickSightClient = require('../utils/QuickSightClient');
 
 const awsAccountId = MetaData.QSConfiguration.awsAccountId;
