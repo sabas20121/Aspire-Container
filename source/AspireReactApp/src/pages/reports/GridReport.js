@@ -48,13 +48,11 @@ function GridReport({ reportKey, columnFilters }) {
     if (reportKey) {
       const report = AGGridReportMetaData.find((item) => item.key === reportKey)
       if (report) {
-        const { reportName, url, columnDefs } = report
+        const { reportName, filePath, columnDefs } = report
         setReportName(reportName)
-        const parts = url.split('/');
-        const pathWithFilename = parts.slice(3).join('/');
         const payload = {
           tenantId: 'LSEGDev',
-          fileName: `${pathWithFilename}`
+          fileName: filePath
         };
         fetchCsvData(payload)
           .then((jsonData) => {
