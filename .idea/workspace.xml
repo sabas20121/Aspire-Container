@@ -5,7 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cec8fa52-e7fd-4273-ba35-a8bd49b506bc" name="Changes" comment="redo">
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/android-chrome-192x192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/android-chrome-512x512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/apple-touch-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/index-b06d8778.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/index-d68e9968.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/browserconfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/favicon-16x16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/favicon-32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/mstile-144x144.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/mstile-150x150.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/mstile-310x150.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/mstile-310x310.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/mstile-70x70.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/safari-pinned-tab.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697736989109</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="redo">
+      <created>1697737019681</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1697737019681</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
