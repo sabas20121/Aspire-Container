@@ -2,7 +2,7 @@
     {
         "key": "Issue_To_Action_Mapping",
         "reportName": "Issue To Action Mapping",
-        "url": "https://ms-optimizer.s3.us-east-2.amazonaws.com/Sample/CIBC_Aspire_Data/final_issue_data_file_cibc_Issue_Actions.csv",
+        "fileName": "Sample/CIBC_Aspire_Data/final_issue_data_file_cibc_Issue_Actions.csv",
         "columnDefs": [
             {
                 "field": "ISSUE_ID",
@@ -114,7 +114,7 @@
     {
         "key": "Issue_With_No_Actions",
         "reportName": "Issue With No Actions",
-        "url": "https://ms-optimizer.s3.us-east-2.amazonaws.com/Sample/CIBC_Aspire_Data/final_issue_data_file_cibc_only_Issue.csv",
+        "filePath": "Sample/CIBC_Aspire_Data/final_issue_data_file_cibc_only_Issue.csv",
         "columnDefs": [
             {
                 "field": "ISSUE_ID",
@@ -175,7 +175,7 @@
     {
         "key": "Issue_By_Type",
         "reportName": "Issue By Type",
-        "url": "https://ms-optimizer.s3.us-east-2.amazonaws.com/Sample/CIBC_Aspire_Data/final_issue_data_file_cibc_only_Issue.csv",
+        "filePath": "Sample/CIBC_Aspire_Data/final_issue_data_file_cibc_only_Issue.csv",
         "columnDefs": [
             {
                 "field": "ISSUE_ID",
@@ -253,7 +253,7 @@
     {
         "key": "Issue_With_No_GRC_Connections",
         "reportName": "Issue With No GRC Connections",
-        "url": "https://ms-optimizer.s3.us-east-2.amazonaws.com/Sample/CIBC_Aspire_Data/missing_actions_table.csv",
+        "filePath": "Sample/CIBC_Aspire_Data/missing_actions_table.csv",
         "columnDefs": [
             {
                 "field": "ISSUE_ID",
@@ -348,7 +348,7 @@
     {
         "key": "Issues_Mapped_To_GRC_Objects",
         "reportName": "Issues Mapped To GRC Objects",
-        "url": "https://ms-optimizer.s3.us-east-2.amazonaws.com/Sample/CIBC_Aspire_Data/final_issue_data_file_cibc_Issue_GRC_Rel.csv",
+        "filePath": "Sample/CIBC_Aspire_Data/final_issue_data_file_cibc_Issue_GRC_Rel.csv",
         "columnDefs": [
             {
                 "field": "ISSUE_ID",
@@ -475,7 +475,7 @@
     {
         "key": "Trending_Issues",
         "reportName": "Trending Issues",
-        "url": "https://ms-optimizer.s3.us-east-2.amazonaws.com/Sample/CIBC_Aspire_Data/Trend_charts.csv",
+        "filePath": "Sample/CIBC_Aspire_Data/Trend_charts.csv",
         "columnDefs": [
             {
                 "field": "ISSUE_ID",
@@ -553,7 +553,7 @@
     {
         "key": "Action_Recommendations",
         "reportName": "Action Recommendations",
-        "url": "https://ms-optimizer.s3.us-east-2.amazonaws.com/Sample/CIBC_Aspire_Data/action_plan_recommendations_cibc.csv",
+        "filePath": "Sample/CIBC_Aspire_Data/action_plan_recommendations_cibc.csv",
         "columnDefs": [
             {
                 "field": "ISSUE_ID",
@@ -665,7 +665,7 @@
     {
         "key": "Control_Recommendations",
         "reportName": "Control Recommendations",
-        "url": "https://ms-optimizer.s3.us-east-2.amazonaws.com/Sample/CIBC_Aspire_Data/clustering_data_recommendations_cibc_only_Control.csv",
+        "filePath": "Sample/CIBC_Aspire_Data/clustering_data_recommendations_cibc_only_Control.csv",
         "columnDefs": [
             {
                 "field": "issue_id",
@@ -777,7 +777,7 @@
     {
         "key": "Risk_Recommendations",
         "reportName": "Risk Recommendations",
-        "url": "https://ms-optimizer.s3.us-east-2.amazonaws.com/Sample/CIBC_Aspire_Data/clustering_data_recommendations_cibc_only_Risk.csv",
+        "filePath": "Sample/CIBC_Aspire_Data/clustering_data_recommendations_cibc_only_Risk.csv",
         "columnDefs": [
             {
                 "field": "issue_id",
@@ -889,7 +889,7 @@
     {
         "key": "Duplicate_Issues",
         "reportName": "Duplcate Issues",
-        "url": "https://ms-optimizer.s3.us-east-2.amazonaws.com/Sample/CIBC_Aspire_Data/similar_duplicate_data_cibc.csv",
+        "filePath": "Sample/CIBC_Aspire_Data/similar_duplicate_data_cibc.csv",
         "columnDefs": [
             {
                 "field": "issue_id",
@@ -950,7 +950,7 @@
     {
         "key": "Similar_Issues",
         "reportName": "Similar Issues",
-        "url": "https://ms-optimizer.s3.us-east-2.amazonaws.com/Sample/CIBC_Aspire_Data/similar_duplicate_data_cibc.csv",
+        "filePath": "Sample/CIBC_Aspire_Data/similar_duplicate_data_cibc.csv",
         "columnDefs": [
             {
                 "field": "issue_id",
@@ -1011,7 +1011,7 @@
     {
         "key": "Issues_associated_with_the_Theme",
         "reportName": "Issues associated with the Theme",
-        "url": "https://ms-optimizer.s3.us-east-2.amazonaws.com/Sample/CIBC_Aspire_Data/clustering_data_recommendations_cibc_only_Issue.csv",
+        "filePath": "Sample/CIBC_Aspire_Data/clustering_data_recommendations_cibc_only_Issue.csv",
         "columnDefs": [
             {
                 "field": "issue_id",
@@ -1072,7 +1072,7 @@
     {
         "key": "Controls_with_Issues",
         "reportName": "Control With Issues",
-        "url": "https://ms-optimizer.s3.us-east-2.amazonaws.com/Sample/CIBC_Aspire_Data/Controls_with_Issues.csv",
+        "filePath": "Sample/CIBC_Aspire_Data/Controls_with_Issues.csv",
         "columnDefs": [
             {
                 "field": "OBJECT_ID",
@@ -1201,7 +1201,7 @@
     {
         "key": "Failed_Controls",
         "reportName": "Failed Controls",
-        "url": "https://ms-optimizer.s3.us-east-2.amazonaws.com/Sample/CIBC_Aspire_Data/Failed_Controls.csv",
+        "filePath": "Sample/CIBC_Aspire_Data/Failed_Controls.csv",
         "columnDefs": [
             {
                 "field": "OBJECT_ID",
@@ -1296,7 +1296,7 @@
     {
         "key": "Control_Testing",
         "reportName": "Control Testing",
-        "url": "https://ms-optimizer.s3.us-east-2.amazonaws.com/Sample/CIBC_Aspire_Data/Control_Testing.csv",
+        "filePath": "Sample/CIBC_Aspire_Data/Control_Testing.csv",
         "columnDefs": [
             {
                 "field": "OBJECT_ID",
@@ -1391,7 +1391,7 @@
     {
         "key": "Control_Details",
         "reportName": "Control Details",
-        "url": "https://ms-optimizer.s3.us-east-2.amazonaws.com/Sample/CIBC_Aspire_Data/Control_Details.csv",
+        "filePath": "Sample/CIBC_Aspire_Data/Control_Details.csv",
         "columnDefs": [
             {
                 "field": "OBJECT_ID",
@@ -1486,7 +1486,7 @@
     {
         "key": "Control_Testing_Details",
         "reportName": "Control Testing Details",
-        "url": "https://ms-optimizer.s3.us-east-2.amazonaws.com/Sample/CIBC_Aspire_Data/Control_Testing_Details.csv",
+        "filePath": "Sample/CIBC_Aspire_Data/Control_Testing_Details.csv",
         "columnDefs": [
             {
                 "field": "OBJECT_ID",
@@ -1598,7 +1598,7 @@
     {
         "key": "Control_Redundant_Similar",
         "reportName": "Control Details",
-        "url": "https://ms-optimizer.s3.us-east-2.amazonaws.com/Sample/CIBC_Aspire_Data/Control_Redundant_Similar.csv",
+        "filePath": "Sample/CIBC_Aspire_Data/Control_Redundant_Similar.csv",
         "columnDefs": [
             {
                 "field": "OBJECT_ID",
