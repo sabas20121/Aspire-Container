@@ -1,8 +1,6 @@
 {
     "Port": {
-        "ProxyPort": 446,
-        "AspirePort": 443,
-        "GraphExplorerPort": 442
+        "AspirePort": 443
     },
     "SSL": {
         "SSL_Certificate": "/home/ec2-user/server.crt",
@@ -32,7 +30,7 @@
         "GRAPH_EXP_IAM": false,
         "GRAPH_EXP_AWS_REGION": "",
         "enableCache": true,
-        "cacheTimeMs": 600000
+        "cacheTimeMs": 100000
     },
     "ClientDetails": {
         "cognitoClientId": "tk8na4d5u0tn4n23s9imthk5c",
@@ -41,5 +39,9 @@
     "InstanceURL": {
         "GEInstanceURL": "https://ec2-18-117-81-12.us-east-2.compute.amazonaws.com:442",
         "ProxyEndpointURL": "https://ec2-18-117-81-12.us-east-2.compute.amazonaws.com:446"
+    },
+    "S3Configuration": {
+        "bucketName": "ms-optimizer",
+        "s3Region": "us-east-2"
     }
 }
