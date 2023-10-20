@@ -33,6 +33,8 @@ const grabConfig = async (): Promise<RawConfiguration | undefined> => {
         graphDbUrl: Configuration.GRAPH_EXP_CONNECTION_URL || "",
         awsAuthEnabled: !!Configuration.GRAPH_EXP_IAM,
         awsRegion: Configuration.GRAPH_EXP_AWS_REGION || "",
+        enableCache: Configuration.enableCache || true,
+        cacheTimeMs: Configuration.cacheTimeMs,
       },
     };
 
@@ -58,8 +60,8 @@ const BootstrapApp = () => {
       <Router>
         <ConnectedProvider config={config}>
           {
-          <App /> 
-        }
+            <App />
+          }
         </ConnectedProvider>
       </Router>
     </React.StrictMode>
