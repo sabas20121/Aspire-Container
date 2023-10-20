@@ -13,7 +13,7 @@ async function getObject( fileName ) {
     try {
         const getObjectParams = {
             Bucket: bucketName,
-            Key: `${fileName}`,
+            Key: fileName,
         };
 
         const getObject = new GetObjectCommand(getObjectParams);
