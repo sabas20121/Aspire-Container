@@ -50,17 +50,11 @@ function GridReport({ reportKey, columnFilters }) {
       if (report) {
         const { reportName, url, columnDefs } = report
         setReportName(reportName)
-        const urlParts = url.split('/');
-        let s3Region;
-        const s3RegionExt = url.match(/\.s3\.(.*?)\.amazonaws\.com/);
-        if (s3RegionExt && s3RegionExt.length > 1) {
-          s3Region = s3RegionExt[1];
-        }
+        const parts = url.split('/');
+        const pathWithFilename = parts.slice(3).join('/');
         const payload = {
-          bucketName: urlParts[2],
-          path: urlParts.slice(3, urlParts.length - 1).join('/'),
-          fileName: urlParts[urlParts.length - 1],
-          s3Region: s3Region
+          tenantId: 'LSEGDev',
+          fileName: `${pathWithFilename}`
         };
         fetchCsvData(payload)
           .then((jsonData) => {
