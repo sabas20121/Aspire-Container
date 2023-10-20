@@ -1,10 +1,10 @@
 const S3Service = require('../service/S3Service');
 
 async function getReportObject(req, res) {
-  const { bucketName, path, fileName, s3Region } = req.body;
+  const { tenantId, fileName } = req.body;
 
   try {
-    const response = await S3Service.getObject({ bucketName, path, fileName, s3Region });
+    const response = await S3Service.getObject({ fileName });
 
     res.json(response);
   } catch (err) {
