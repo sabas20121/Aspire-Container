@@ -6,24 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cec8fa52-e7fd-4273-ba35-a8bd49b506bc" name="Changes" comment="redo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/android-chrome-192x192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/android-chrome-512x512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/apple-touch-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/index-b06d8778.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/index-d68e9968.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/browserconfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/favicon-16x16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/favicon-32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/mstile-144x144.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/mstile-150x150.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/mstile-310x150.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/mstile-310x310.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/mstile-70x70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/safari-pinned-tab.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +30,11 @@
     "last_opened_file_path": "D:/Projects/GIT/PSNL/Aspire-Container"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\GIT\PSNL\Aspire-Container" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Aspire-Container" />
@@ -170,8 +157,40 @@
       <option name="project" value="LOCAL" />
       <updated>1697737019681</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="redo">
+      <created>1697763674720</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1697763674720</updated>
+    </task>
+    <task id="LOCAL-00016" summary="redo">
+      <created>1697763820369</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1697763820369</updated>
+    </task>
+    <task id="LOCAL-00017" summary="redo">
+      <created>1697763897415</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1697763897415</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lseg" />
