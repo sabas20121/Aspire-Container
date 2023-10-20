@@ -17,6 +17,13 @@ async function getObject( fileName ) {
         };
 
         const getObject = new GetObjectCommand(getObjectParams);
+//        const { Body } = await s3Client.client.send(getObject);
+//                const fileStream = fs.createWriteStream(localFilePath);
+//                Body.pipe(fileStream);
+//                await new Promise((resolve, reject) => {
+//                    fileStream.on("finish", resolve);
+//                    fileStream.on("error", reject);
+//                });
         const data = await s3Client.client.send(getObject);
 
         const csvContent = data.Body.toString();
