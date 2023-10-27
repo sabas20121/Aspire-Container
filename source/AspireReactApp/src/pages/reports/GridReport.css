@@ -88,6 +88,10 @@
     justify-content: center;
     align-items: center;
     background-color: #399d96;
+
+    &:hover {
+          background-color: #255653;
+        }
   }
 
   &&.MuiTouchRipple-root {
