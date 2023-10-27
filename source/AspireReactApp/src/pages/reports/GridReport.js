@@ -15,6 +15,13 @@ import './GridReport.css'
 import { BarWave } from 'react-cssfx-loading'
 import { LicenseManager } from 'ag-grid-enterprise'
 
+import {
+  ScreenStates,
+  //renderLoadingMessage,
+  renderErrorMessage
+} from '../../components/ScreenStates/screenState'
+import QuickSightAPI from '../../services/QuickSightAPI'
+
 import reporticon from '../../assets/reporticon.svg'
 
 LicenseManager.setLicenseKey(
@@ -35,6 +42,9 @@ function GridReport({ reportKey, columnFilters }) {
   const [originalData, setOriginalData] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [columnDetails, setColumnDefs] = useState([])
+  const [url, setUrl] = useState(null)
+  const [screenState, setScreenState] = useState('')
+  const [dashboardId, setDashboardId] = useState('')
 
   const reportMetaData = localStorage.getItem('ReportMetaData');
   const AGGridReportMetaData = reportMetaData ? JSON.parse(reportMetaData) : [];
@@ -61,6 +71,7 @@ function GridReport({ reportKey, columnFilters }) {
             setColumnDefs(columnDefs)
             applyColumnFilters(jsonData, columnFilters)
             setIsLoading(false)
+            capturePreviousDashboardId();
           })
           .catch((error) => {
             console.error('Error fetching CSV data:', error)
@@ -149,9 +160,57 @@ function GridReport({ reportKey, columnFilters }) {
     return document.body
   }, [])
 
-  // function goBack() {
-  //   window.history.back()
-  // }
+  const capturePreviousDashboardId = () => {
+    const dashboardId = sessionStorage.getItem('dashboardId');
+    if (dashboardId) {
+      setDashboardId(dashboardId);
+    } else {
+      console.error("ID not found ");
+    }
+  }
+
+  function goBack() {
+    if (dashboardId) {
+      fetchDashboardUrl();
+    }
+    // else {
+    // window.history.back()
+    // }
+  }
+
+  const fetchDashboardUrl = async () => {
+    try {
+      const response = await QuickSightAPI.generateDashboardURL();
+
+      if (response.status === 200) {
+        setUrl(response.payload.url);
+        setScreenState(ScreenStates.CONTENT_AVAILABLE);
+      } else if (response.status === 500) {
+        setScreenState(ScreenStates.ERROR);
+        renderErrorMessage()
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setScreenState(ScreenStates.ERROR);
+      renderErrorMessage()
+    }
+  };
+
+  useEffect(() => {
+    const goBackToDashboard = async () => {
+      if (url && screenState === ScreenStates.CONTENT_AVAILABLE) {
+
+        if (dashboardId) {
+          let DashboardURL = url.replace(/non-existent-id/, dashboardId);
+          window.location.href = DashboardURL;
+          // sessionStorage.removeItem('dashboardId');
+        }
+      }
+    };
+
+    goBackToDashboard();
+
+  }, [url, screenState]);
 
   const getRowHeight = (params) => {
     const maxRowHeight = 200

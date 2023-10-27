@@ -14,19 +14,19 @@ export default function Reports() {
     setScreenState(ScreenStates.CONTENT_AVAILABLE)
   }
 
-  const MetaData = require('../../MetaData.json')
+  // const MetaData = require('../../MetaData.json')
 
-  const Configuration = MetaData.GraphConfiguration;
-  const configFileParam = JSON.stringify(Configuration);
+  // const Configuration = MetaData.GraphConfiguration;
+  // const configFileParam = JSON.stringify(Configuration);
 
-  const urlWithConfig = `/ge/?configFile=${encodeURIComponent(configFileParam)}`;
+  // const urlWithConfig = `/ge/?configFile=${encodeURIComponent(configFileParam)}`;
 
   return (
     <Box className="GraphExplorer-container">
       <Box className="GraphExplorer-iframe">
         {screenState === ScreenStates.LOADING ? renderLoadingMessage() : null}
         <iframe
-          src={urlWithConfig}
+          src="/ge"//{urlWithConfig}
           title="GraphExplorer"
           width="100%"
           height="100%"

@@ -106,6 +106,7 @@ export default function Dashboard() {
 
   const renderTabPanel = (dashboard, index, url) => {
     if (url && typeof url === 'string' && index === activeTab) {
+      sessionStorage.setItem('dashboardId', dashboard.DashboardId);
       url = url.replace(/non-existent-id/, dashboard.DashboardId);
       try {
         embedQuickSightDashboard(url, index)

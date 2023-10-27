@@ -2,12 +2,13 @@ import queryString from "query-string";
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { HashRouter as Router } from "react-router-dom";
-import { v4 } from "uuid";//added
-import { formatDate } from "./utils";//added
+import { v4 } from "uuid";
+import { formatDate } from "./utils";
 import App from "./App";
 import { RawConfiguration } from "./core";
 import ConnectedProvider from "./core/ConnectedProvider";
 import "./index.css";
+import MetaData from './MetaData.json';
 
 const grabConfig = async (): Promise<RawConfiguration | undefined> => {
 
@@ -18,23 +19,23 @@ const grabConfig = async (): Promise<RawConfiguration | undefined> => {
   try {
     //////////////////////////////////
 
-    let Configuration;
-    if (params.configFile) {
-      Configuration = JSON.parse(params.configFile);
-    }
+    // let Configuration;
+    // if (params.configFile) {
+    //   Configuration = JSON.parse(params.configFile);
+    // }
     const newConfigId = v4();
     return {
       id: newConfigId,
       displayLabel: `Connection (${formatDate(new Date(), "yyyy-MM-dd HH:mm")})`,
       connection: {
-        url: Configuration.GRAPH_EXP_PUBLIC_OR_PROXY_ENDPOINT || "",
-        queryEngine: Configuration.GRAPH_EXP_GRAPH_TYPE,
-        proxyConnection: !!Configuration.GRAPH_EXP_USING_PROXY_SERVER,
-        graphDbUrl: Configuration.GRAPH_EXP_CONNECTION_URL || "",
-        awsAuthEnabled: !!Configuration.GRAPH_EXP_IAM,
-        awsRegion: Configuration.GRAPH_EXP_AWS_REGION || "",
-        enableCache: Configuration.enableCache || true,
-        cacheTimeMs: Configuration.cacheTimeMs,
+        url: MetaData.GraphConfiguration.GRAPH_EXP_PUBLIC_OR_PROXY_ENDPOINT,
+        queryEngine: MetaData.GraphConfiguration.GRAPH_EXP_GRAPH_TYPE,
+        proxyConnection: !!MetaData.GraphConfiguration.GRAPH_EXP_USING_PROXY_SERVER,
+        graphDbUrl: MetaData.GraphConfiguration.GRAPH_EXP_CONNECTION_URL || "",
+        awsAuthEnabled: !!MetaData.GraphConfiguration.GRAPH_EXP_IAM,
+        awsRegion: MetaData.GraphConfiguration.GRAPH_EXP_AWS_REGION || "",
+        enableCache: MetaData.GraphConfiguration.enableCache || true,
+        cacheTimeMs: MetaData.GraphConfiguration.cacheTimeMs,
       },
     };
 

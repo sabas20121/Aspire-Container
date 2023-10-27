@@ -1,5 +1,5 @@
 function authorize(req, res, next) {
-  console.log('Authorization successful');
+//  console.log('Authorization successful');
   next();
 }
 
