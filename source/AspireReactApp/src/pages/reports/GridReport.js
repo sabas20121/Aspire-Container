@@ -61,9 +61,9 @@ function GridReport({ reportKey, columnFilters }) {
       if (report) {
         const { reportName, filePath, columnDefs } = report
         setReportName(reportName)
-        const clientID = MetaData.ClientDetails.cognitoClientId;
+        const cognitoClientId = MetaData.ClientDetails.cognitoClientId;
         const payload = {
-          tenantId: clientID,
+          tenantId: cognitoClientId,
           fileName: filePath
         };
         fetchCsvData(payload)
