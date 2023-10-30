@@ -22,6 +22,7 @@ export default function Dashboard() {
   const [url, setUrl] = useState('')
   const [dashboardList, setDashboardList] = useState([])
   const [screenState, setScreenState] = useState(ScreenStates.LOADING)
+  const [reloadFlag, setReloadFlag] = useState(false);
 
   const sortDashboardList = (list) => {
     return list.sort((a, b) => {
@@ -71,9 +72,10 @@ export default function Dashboard() {
     if (screenState === ScreenStates.CONTENT_AVAILABLE) {
       fetchDashboardUrl()
     }
-  }, [activeTab, screenState])
+  }, [activeTab, screenState, reloadFlag])
 
   const handleChange = (index) => {
+    setReloadFlag(!reloadFlag);
     setUrl()
     setActiveTab(index)
   }
