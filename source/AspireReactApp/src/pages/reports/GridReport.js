@@ -62,7 +62,7 @@ function GridReport({ reportKey, columnFilters }) {
         setReportName(reportName)
         const clientId = "AispireDev";
         const payload = {
-          tenantId: cognitoClientId,
+          tenantId: clientId,
           fileName: filePath
         };
         fetchCsvData(payload)
