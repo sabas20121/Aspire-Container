@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cec8fa52-e7fd-4273-ba35-a8bd49b506bc" name="Changes" comment="MetaData API" />
+    <list default="true" id="cec8fa52-e7fd-4273-ba35-a8bd49b506bc" name="Changes" comment="Redo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/pages/reports/GridReport.js" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/pages/reports/GridReport.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,27 +50,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697615716371</updated>
-    </task>
-    <task id="LOCAL-00003" summary="redo">
-      <created>1697640017072</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1697640017072</updated>
-    </task>
-    <task id="LOCAL-00004" summary="redo">
-      <created>1697643820717</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1697643820717</updated>
-    </task>
-    <task id="LOCAL-00005" summary="redo">
-      <created>1697644009025</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1697644009025</updated>
     </task>
     <task id="LOCAL-00006" summary="redo">
       <created>1697694651998</created>
@@ -391,7 +373,28 @@
       <option name="project" value="LOCAL" />
       <updated>1698662215582</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="MetaData API">
+      <created>1698662343642</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1698662343642</updated>
+    </task>
+    <task id="LOCAL-00053" summary="MetaData API">
+      <created>1698662362090</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1698662362090</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Redo">
+      <created>1698668998114</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1698668998114</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -424,6 +427,7 @@
     <MESSAGE value="lseg" />
     <MESSAGE value="redo" />
     <MESSAGE value="MetaData API" />
-    <option name="LAST_COMMIT_MESSAGE" value="MetaData API" />
+    <MESSAGE value="Redo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Redo" />
   </component>
 </project>

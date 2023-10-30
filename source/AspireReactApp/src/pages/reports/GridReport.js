@@ -297,13 +297,13 @@ function GridReport({ reportKey, columnFilters }) {
             />
             <Typography className="drilldown-title">{reportName}</Typography>
           </Box>
-          {/* <Button
+          <Button
             className="drilldown-back-button"
             variant="contained"
             onClick={goBack}
           >
             <Typography className="drilldown-back-button-text">Back</Typography>
-          </Button> */}
+          </Button>
         </Toolbar>
       </AppBar >
     )
