@@ -60,9 +60,7 @@ function GridReport({ reportKey, columnFilters }) {
       if (report) {
         const { reportName, filePath, columnDefs } = report
         setReportName(reportName)
-        const clientId = "AispireDev";
         const payload = {
-          tenantId: clientId,
           fileName: filePath
         };
         fetchCsvData(payload)
