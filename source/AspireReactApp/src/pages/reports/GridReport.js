@@ -46,7 +46,6 @@ function GridReport({ reportKey, columnFilters }) {
   const [screenState, setScreenState] = useState('')
   const [dashboardId, setDashboardId] = useState('')
 
-  const MetaData = require('../../MetaData.json')
   const reportMetaData = localStorage.getItem('ReportMetaData');
   const AGGridReportMetaData = reportMetaData ? JSON.parse(reportMetaData) : [];
 
@@ -61,7 +60,7 @@ function GridReport({ reportKey, columnFilters }) {
       if (report) {
         const { reportName, filePath, columnDefs } = report
         setReportName(reportName)
-        const cognitoClientId = MetaData.ClientDetails.cognitoClientId;
+        const clientId = "AispireDev";
         const payload = {
           tenantId: cognitoClientId,
           fileName: filePath
