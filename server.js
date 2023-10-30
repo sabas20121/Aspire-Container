@@ -29,6 +29,7 @@ const getSelfServiceURL = require('./src/routes/GetSelfServiceURLRouter');
 const getAskMeURL = require('./src/routes/GetAskMeURLRouter');
 const getReportMetaData = require('./src/routes/GetReportMetaDataRouter');
 const getReportObject = require('./src/routes/GetReportObjectRouter');
+const getClientObject = require('./src/routes/GetClientObjectRouter');
 
 const JsonFileLoader = require('./src/utils/JsonFileLoader');
 const jsonFileLoader = new JsonFileLoader();
@@ -40,6 +41,7 @@ app.use(endpointJson.production.fetchSelfServiceURL, getSelfServiceURL);
 app.use(endpointJson.production.fetchAskMeURL, getAskMeURL);
 app.use(endpointJson.production.fetchReportMetaData, getReportMetaData);
 app.use(endpointJson.production.fetchReportObjects, getReportObject);
+app.use(endpointJson.production.fetchClientObjects, getClientObject);
 
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.static(path.join(__dirname, 'dist')));

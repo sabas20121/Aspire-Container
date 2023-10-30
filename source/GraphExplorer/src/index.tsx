@@ -8,42 +8,62 @@ import App from "./App";
 import { RawConfiguration } from "./core";
 import ConnectedProvider from "./core/ConnectedProvider";
 import "./index.css";
-import MetaData from './MetaData.json';
+
+const apiUrl = '/metricstream/api/fetch-clientobjects';
+
+const fetchGraphConfiguration = async (payload) => {
+  try {
+    const response = await fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      return data.GraphConfiguration;
+//       return data;
+    } else {
+      throw new Error(`Failed to fetch GraphConfiguration: ${response.status}`);
+    }
+  } catch (error) {
+    console.error(`Error when trying to fetch GraphConfiguration: ${error.message}`);
+    return null;
+  }
+};
+
+const payload = {
+  requestedObject: 'GraphConfiguration',
+};
 
 const grabConfig = async (): Promise<RawConfiguration | undefined> => {
-
-  const params = queryString.parse(location.search) as {
-    configFile?: string;
-  };
-
   try {
-    //////////////////////////////////
+    const graphConfig = await fetchGraphConfiguration(payload);
 
-    // let Configuration;
-    // if (params.configFile) {
-    //   Configuration = JSON.parse(params.configFile);
-    // }
-    const newConfigId = v4();
-    return {
-      id: newConfigId,
-      displayLabel: `Connection (${formatDate(new Date(), "yyyy-MM-dd HH:mm")})`,
-      connection: {
-        url: MetaData.GraphConfiguration.GRAPH_EXP_PUBLIC_OR_PROXY_ENDPOINT,
-        queryEngine: MetaData.GraphConfiguration.GRAPH_EXP_GRAPH_TYPE,
-        proxyConnection: !!MetaData.GraphConfiguration.GRAPH_EXP_USING_PROXY_SERVER,
-        graphDbUrl: MetaData.GraphConfiguration.GRAPH_EXP_CONNECTION_URL || "",
-        awsAuthEnabled: !!MetaData.GraphConfiguration.GRAPH_EXP_IAM,
-        awsRegion: MetaData.GraphConfiguration.GRAPH_EXP_AWS_REGION || "",
-        enableCache: MetaData.GraphConfiguration.enableCache || true,
-        cacheTimeMs: MetaData.GraphConfiguration.cacheTimeMs,
-      },
-    };
-
-    ///////////////////////////////////
-
+    if (graphConfig) {
+      const newConfigId = v4();
+      return {
+        id: newConfigId,
+        displayLabel: `Connection (${formatDate(new Date(), "yyyy-MM-dd HH:mm")})`,
+        connection: {
+          url: graphConfig.GRAPH_EXP_PUBLIC_OR_PROXY_ENDPOINT,
+          queryEngine: graphConfig.GRAPH_EXP_GRAPH_TYPE,
+          proxyConnection: !!graphConfig.GRAPH_EXP_USING_PROXY_SERVER,
+          graphDbUrl: graphConfig.GRAPH_EXP_CONNECTION_URL || "",
+          awsAuthEnabled: !!graphConfig.GRAPH_EXP_IAM,
+          awsRegion: graphConfig.GRAPH_EXP_AWS_REGION || "",
+          enableCache: graphConfig.enableCache || true,
+          cacheTimeMs: graphConfig.cacheTimeMs,
+        },
+      };
+    }
   } catch (error) {
     console.error(`Error when trying to create connection: ${error.message}`);
   }
+
+  return undefined;
 };
 
 const BootstrapApp = () => {
