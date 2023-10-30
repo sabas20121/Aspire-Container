@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cec8fa52-e7fd-4273-ba35-a8bd49b506bc" name="Changes" comment="MetaData API">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/index-5135965b.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/assets/index-5135965b.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conf/aspire_urlmapenvironment.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/conf/aspire_urlmapenvironment.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698644192988</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="MetaData API">
+      <created>1698647172236</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1698647172236</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
