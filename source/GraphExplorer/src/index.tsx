@@ -22,9 +22,8 @@ const fetchGraphConfiguration = async (payload) => {
     });
 
     if (response.ok) {
-      const data = await response.json();
-      return data.GraphConfiguration;
-//       return data;
+      const GraphConfiguration = await response.json();
+      return GraphConfiguration;
     } else {
       throw new Error(`Failed to fetch GraphConfiguration: ${response.status}`);
     }
