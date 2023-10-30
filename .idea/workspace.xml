@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cec8fa52-e7fd-4273-ba35-a8bd49b506bc" name="Changes" comment="MetaData API">
-      <change beforePath="$PROJECT_DIR$/source/GraphExplorer/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/source/GraphExplorer/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/pages/reports/GridReport.js" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/pages/reports/GridReport.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -320,7 +321,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698648103849</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="MetaData API">
+      <created>1698650580445</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1698650580445</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
