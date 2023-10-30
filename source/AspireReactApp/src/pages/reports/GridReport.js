@@ -61,7 +61,7 @@ function GridReport({ reportKey, columnFilters }) {
         const { reportName, filePath, columnDefs } = report
         setReportName(reportName)
         const payload = {
-          fileName: filePath
+          S3Key: filePath
         };
         fetchCsvData(payload)
           .then((jsonData) => {
