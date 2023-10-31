@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from '@mui/material';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import LeftPanel from './LeftPanel';
 import Dashboard from '../quicksight/Dashboard';
 import SelfServiceReporting from '../quicksight/SelfServiceReporting';
@@ -18,10 +18,11 @@ export default function Home() {
         <LeftPanel />
         <Routes>
           <Route path="/selfservice" element={<SelfServiceReporting />} />
-          <Route path="/" element={<Dashboard />} />
+          {/* <Route path="/" element={<Dashboard />} /> */}
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/reports" element={<ReportList />} />
           <Route path="/graph" element={<GraphExplorer />} />
+          <Route path="/*" element={<Navigate to="/dashboard" />} />
         </Routes>
       </BrowserRouter>
     </Box>

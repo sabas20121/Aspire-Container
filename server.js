@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const app = express();
 
- const MetaData = require('../MetaData.json')
+ const MetaData = require('./src/conf/MetaData.json')
  const port = MetaData.Port.AspirePort;
  const serverOptions = {
      key: fs.readFileSync('../server.key'),

@@ -2,7 +2,7 @@ const { GetObjectCommand } = require("@aws-sdk/client-s3");
 const csv = require('csv-parser');
 const { Readable } = require('stream');
 const AWSS3Client = require('../utils/S3Client');
-const MetaData = require('../../MetaData.json');
+const MetaData = require('../conf/MetaData.json');
 const bucketName = MetaData.S3Configuration.bucketName;
 const s3Region = MetaData.S3Configuration.s3Region;
 

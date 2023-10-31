@@ -5,7 +5,7 @@ import 'ag-grid-community/styles/ag-theme-alpine.css'
 import { CookieManager } from '../../services/CookieManager';
 import {
   Box,
-  //  Button,
+  Button,
   AppBar,
   Toolbar,
   Typography
