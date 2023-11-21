@@ -33,8 +33,12 @@
     "cacheTimeMs": 100000
   },
   "ClientDetails": {
+    "isSSOEnable": true,
+    "customQSRegistrationEnabled": true,
     "cognitoClientId": "tk8na4d5u0tn4n23s9imthk5c",
-    "cognitoDomainUrl": "https://optimizersampledomain.auth.us-east-2.amazoncognito.com"
+    "cognitoDomainUrl": "https://optimizersampledomain.auth.us-east-2.amazoncognito.com",
+    "cognitoUserPoolId": "abc",
+    "identityProvider": "abc"
   },
   "InstanceURL": {
     "GEInstanceURL": "https://ec2-18-117-81-12.us-east-2.compute.amazonaws.com:442",

@@ -17,12 +17,11 @@ export default function Home() {
       <BrowserRouter>
         <LeftPanel />
         <Routes>
-          <Route path="/selfservice" element={<SelfServiceReporting />} />
-          {/* <Route path="/" element={<Dashboard />} /> */}
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/selfservice" element={<SelfServiceReporting />} />
           <Route path="/reports" element={<ReportList />} />
           <Route path="/graph" element={<GraphExplorer />} />
-          <Route path="/*" element={<Navigate to="/dashboard" />} />
+          <Route path="/" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </Box>

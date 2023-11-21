@@ -77,7 +77,7 @@
   align-items: center;
   width: 50%;
   height: 100%;
-  padding-top: 50px;
+  padding-top: 88px;
 }
 
 .logo-div {
@@ -116,7 +116,7 @@
 .login-button-div {
   display: flex;
   flex-direction: row-reverse;
-  padding-top: 96px;
+  padding-top: 50px;
 }
 
 .login-button {
@@ -161,3 +161,38 @@
   padding: 15px;
   border-radius: 7px;
 }
+.login-button-div-sso {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.sso-button {
+  width: 584px;
+  height: 48px;
+  border-radius: 4px;
+  border: none;
+  gap: 10px;
+  background: #403759;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.sso-button:hover {
+  background-color: #2b263a;
+}
+
+
+.sso-separater {
+  display: flex;
+  align-items: center;
+}
+
+.sso-line {
+  flex: 1;
+  height: 1px;
+  background-color: #ccc;
+  margin: 10px 5px;
+}
+

@@ -5,12 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cec8fa52-e7fd-4273-ba35-a8bd49b506bc" name="Changes" comment="Redo">
+      <change afterPath="$PROJECT_DIR$/src/controllers/QuickSightUserController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/GetQuicksightUserDetailsRouter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/QuickSightUserRegistrationClient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Aspire-Container.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Aspire-Container.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/build/static/js/main.fdd4ce0b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/build/static/js/main.fdd4ce0b.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/build/static/js/main.fdd4ce0b.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/pages/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/pages/home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/pages/login/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/pages/login/Login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/pages/login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/pages/login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conf/MetaData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/conf/MetaData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conf/aspire_urlmapenvironment.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/conf/aspire_url_map_environment.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/QuickSightService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/QuickSightService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/S3Service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/S3Service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +43,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/Projects/GIT/PSNL",
+    "last_opened_file_path": "D:/Projects/GIT/PSNL/Aspire-Container/src/conf",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -43,6 +51,10 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\GIT\PSNL\Aspire-Container\src\conf" />
+      <recent name="D:\Projects\GIT\PSNL\Aspire-Container\src\utils" />
+      <recent name="D:\Projects\GIT\PSNL\Aspire-Container\src\routes" />
+      <recent name="D:\Projects\GIT\PSNL\Aspire-Container\src\controllers" />
       <recent name="D:\Projects\GIT\PSNL\Aspire-Container" />
     </key>
   </component>
@@ -54,13 +66,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697615716371</updated>
-    </task>
-    <task id="LOCAL-00008" summary="redo">
-      <created>1697717259761</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1697717259761</updated>
     </task>
     <task id="LOCAL-00009" summary="redo">
       <created>1697725537019</created>
@@ -398,7 +403,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698725558606</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Redo">
+      <created>1698730118097</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1698730118097</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -12,7 +12,7 @@ async function getObject(fileName) {
     try {
         const getObjectParams = {
             Bucket: bucketName,
-            Key: fileName.fileName,
+            Key: fileName.S3Key,
         };
         const getObject = new GetObjectCommand(getObjectParams);
 

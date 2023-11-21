@@ -30,10 +30,11 @@ const getAskMeURL = require('./src/routes/GetAskMeURLRouter');
 const getReportMetaData = require('./src/routes/GetReportMetaDataRouter');
 const getReportObject = require('./src/routes/GetReportObjectRouter');
 const getClientObject = require('./src/routes/GetClientObjectRouter');
+const getQSUserDetails = require('./src/routes/GetQuicksightUserDetailsRouter');
 
 const JsonFileLoader = require('./src/utils/JsonFileLoader');
 const jsonFileLoader = new JsonFileLoader();
-const endpointJson = jsonFileLoader.readJsonFile('./src/conf/aspire_urlmapenvironment.json');
+const endpointJson = jsonFileLoader.readJsonFile('./src/conf/aspire_url_map_environment.json');
 
 app.use(endpointJson.production.fetchDashboardList, getDashboardList);
 app.use(endpointJson.production.fetchDashboardURL, getDashboardURL);
@@ -42,6 +43,7 @@ app.use(endpointJson.production.fetchAskMeURL, getAskMeURL);
 app.use(endpointJson.production.fetchReportMetaData, getReportMetaData);
 app.use(endpointJson.production.fetchReportObjects, getReportObject);
 app.use(endpointJson.production.fetchClientObjects, getClientObject);
+app.use(endpointJson.production.fetchQSUserDetails, getQSUserDetails);
 
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.static(path.join(__dirname, 'dist')));
@@ -59,5 +61,5 @@ const server = https.createServer(serverOptions, app);
 // const port = 443;
 
 server.listen(port, () => {
-    console.log(`Aspire Server running on port ${port}`);
+    console.log(`Aspire LSEG Server running on port ${port}`);
 });
