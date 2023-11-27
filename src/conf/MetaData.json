@@ -18,7 +18,8 @@
     "roleArn": "arn:aws:iam::768612497542:role/Optimizer",
     "identityType": "IAM",
     "externalLoginFederationProviderType": "CUSTOM_OIDC",
-    "namespace": "default"
+    "namespace": "default",
+    "groupName": "Quicksight"
   },
   "GraphConfiguration": {
     "Connection_ID": "",
@@ -35,10 +36,10 @@
   "ClientDetails": {
     "isSSOEnable": true,
     "customQSRegistrationEnabled": true,
-    "cognitoClientId": "tk8na4d5u0tn4n23s9imthk5c",
-    "cognitoDomainUrl": "https://optimizersampledomain.auth.us-east-2.amazoncognito.com",
-    "cognitoUserPoolId": "abc",
-    "identityProvider": "abc"
+    "cognitoClientId": "7ls3voq3vlc1c640n3rdj8ps0d",
+    "cognitoDomainUrl": "https://azurefedsso-aispire.auth.us-east-2.amazoncognito.com",
+    "cognitoUserPoolId": "us-east-2_4emRuEOCk",
+    "identityProvider": "AzureFedSSO-aispire"
   },
   "InstanceURL": {
     "GEInstanceURL": "https://ec2-18-117-81-12.us-east-2.compute.amazonaws.com:442",

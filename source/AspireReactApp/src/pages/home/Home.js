@@ -1,6 +1,12 @@
-import React from 'react';
+import React
+// ,{useEffect} 
+ from 'react';
 import { Box } from '@mui/material';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter
+  , Routes
+  , Route
+  // , Navigate 
+} from 'react-router-dom';
 import LeftPanel from './LeftPanel';
 import Dashboard from '../quicksight/Dashboard';
 import SelfServiceReporting from '../quicksight/SelfServiceReporting';
@@ -10,7 +16,12 @@ import GraphExplorer from '../graphexplorer/GraphExplorer';
 import './Home.css';
 
 export default function Home() {
-  window.location.hash = '';
+  // window.location.hash = '';
+
+  // useEffect(() => {
+  //   const newUrl = `${window.location.origin}${window.location.pathname}`;
+  //   window.history.replaceState({}, document.title, newUrl);
+  // }, []);
   return (
 
     <Box id="Home" className="Home">

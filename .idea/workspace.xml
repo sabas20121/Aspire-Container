@@ -4,21 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cec8fa52-e7fd-4273-ba35-a8bd49b506bc" name="Changes" comment="Redo">
-      <change afterPath="$PROJECT_DIR$/src/controllers/QuickSightUserController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/GetQuicksightUserDetailsRouter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/QuickSightUserRegistrationClient.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Aspire-Container.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Aspire-Container.iml" afterDir="false" />
+    <list default="true" id="cec8fa52-e7fd-4273-ba35-a8bd49b506bc" name="Changes" comment="Custom Login &amp; QS Registration Implementation.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/build/static/css/main.d2a41c6e.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/build/static/css/main.d2a41c6e.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/pages/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/pages/home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/pages/login/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/pages/login/Login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/pages/home/LeftPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/pages/home/LeftPanel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/pages/login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/pages/login/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/conf/MetaData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/conf/MetaData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conf/aspire_urlmapenvironment.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/conf/aspire_url_map_environment.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/QuickSightService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/QuickSightService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/S3Service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/S3Service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,16 +36,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/Projects/GIT/PSNL/Aspire-Container/src/conf",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/GIT/PSNL/Aspire-Container/src/conf&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Projects\GIT\PSNL\Aspire-Container\src\conf" />
@@ -66,13 +64,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697615716371</updated>
-    </task>
-    <task id="LOCAL-00009" summary="redo">
-      <created>1697725537019</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1697725537019</updated>
     </task>
     <task id="LOCAL-00010" summary="redo">
       <created>1697725584935</created>
@@ -410,7 +401,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698730118097</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Custom Login &amp; QS Registration Implementation.">
+      <created>1700540625464</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1700540625464</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -444,6 +442,7 @@
     <MESSAGE value="redo" />
     <MESSAGE value="MetaData API" />
     <MESSAGE value="Redo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Redo" />
+    <MESSAGE value="Custom Login &amp; QS Registration Implementation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Custom Login &amp; QS Registration Implementation." />
   </component>
 </project>

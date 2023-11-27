@@ -1,310 +1,430 @@
-import React, { useState, useEffect } from 'react';
-import { CookieManager } from '../../services/CookieManager.js';
-import { SessionManager } from '../../services/SessionManager.js';
+import React, {
+	useState,
+	useEffect
+} from 'react';
 import {
-  CognitoUser,
-  CognitoUserPool,
-  AuthenticationDetails,
+	CookieManager
+} from '../../services/CookieManager.js';
+import {
+	SessionManager
+} from '../../services/SessionManager.js';
+import {
+	CognitoUser,
+	CognitoUserPool,
+	AuthenticationDetails,
 } from 'amazon-cognito-identity-js';
 
 import Home from '../home/Home.js';
 import config from "../../config/config.js";
 import './Login.css';
-import { Button, TextField, Typography } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import {
+	Button,
+	TextField,
+	Typography
+} from "@mui/material";
+// import {
+// 	styled
+// } from "@mui/material/styles";
 
 import aispire from '../../assets/aispire-login.svg';
 import laptop from '../../assets/laptop.png';
 
 export default function Login() {
-  const [formData, setFormData] = useState({
-    username: '',
-    password: '',
-    isAuthenticated: false,
-  });
+	const [formData, setFormData] = useState({
+		username: '',
+		password: '',
+		isAuthenticated: false,
+	});
 
-  const redirectUrl = config.redirectUrl;
-  const [errorMessage, setErrorMessage] = useState('');
-  const [clientFlag, setClientFlag] = useState(null);
-  const [isSSOEnable, setSSOFlag] = useState(null);
-  const [customQSRegistrationEnabled, setQSRegistrationFlag] = useState(null);
-  const [cognitoDomainUrl, setCognitoDomainUrl] = useState(null);
-  const [cognitoClientId, setCognitoClientId] = useState(null);
-  const [cognitoUserPoolId, setCognitoUserPoolId] = useState(null);
-  const [identityProvider, setIdentityProvider] = useState(null);
-  // const [identityPoolId, setIdentityPoolId] = useState(null);
-  // const [identityProviderRegion, setIdentityProviderRegion] = useState(null);
-
-
+	const redirectUrl = config.redirectUrl;
+	const [errorMessage, setErrorMessage] = useState('');
+	const [clientFlag, setClientFlag] = useState(null);
+	const [isSSOEnable, setSSOFlag] = useState(null);
+	const [customQSRegistrationEnabled, setQSRegistrationFlag] = useState(null);
+	const [cognitoDomainUrl, setCognitoDomainUrl] = useState(null);
+	const [cognitoClientId, setCognitoClientId] = useState(null);
+	const [cognitoUserPoolId, setCognitoUserPoolId] = useState(null);
+	const [identityProvider, setIdentityProvider] = useState(null);
+	// const [identityPoolId, setIdentityPoolId] = useState(null);
+	// const [identityProviderRegion, setIdentityProviderRegion] = useState(null);
 
 
-  useEffect(() => {
-    const payload = {
-      requestedObject: 'ClientDetails',
-    };
-
-    fetchClientDetails(payload)
-      .then((ClientDetails) => {
-        setSSOFlag(ClientDetails.isSSOEnable);
-        setQSRegistrationFlag(ClientDetails.customQSRegistrationEnabled);
-        setCognitoDomainUrl(ClientDetails.cognitoDomainUrl);
-        setCognitoClientId(ClientDetails.cognitoClientId);
-        setCognitoUserPoolId(ClientDetails.cognitoUserPoolId);
-         if(ClientDetails.isSSOEnable){
-          setIdentityProvider(ClientDetails.identityProvider)
-          // setIdentityPoolId(ClientDetails.identityPoolId)
-          // setIdentityProviderRegion(ClientDetails.identityProviderRegion)
-         }
-        setClientFlag(true);
-      })
-      .catch((error) => {
-        console.error('Error fetching client details:', error);
-      });
-  }, []);
-  const fetchQSUserDetails = (idToken) => {
-        const payload = {
-            openIdToken: idToken
-        };
-        const apiUrl = '/metricstream/api/fetch-QSUserDetails';
-        return fetch(apiUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(payload),
-        })
-            .then((response) => response.json())
-            .catch((error) => {
-                console.error('Error fetching client data:', error);
-                throw error;
-            });
-    }
-
-  function fetchClientDetails(payload) {
-    const apiUrl = '/metricstream/api/fetch-clientobjects';
-    return fetch(apiUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(payload),
-    })
-      .then((response) => response.json())
-      .catch((error) => {
-        console.error('Error fetching client data:', error);
-        throw error;
-      });
-  }
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const fetchReportMetaData = () => {
-    const payload = {};
-
-    fetch('/metricstream/api/tasks/fetch-ReportMetaData', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(payload),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        if (data) {
-          localStorage.setItem('ReportMetaData', JSON.stringify(data));
-        } else {
-          console.error('Error: Invalid response data format.');
-        }
-      })
-      .catch((error) => {
-        console.error('Error fetching report data:', error);
-      });
-  };
-
-  const handleAuthenticationSuccess = (idToken) => {
-    CookieManager.setCookie('OptimizerID', idToken);
-    if(customQSRegistrationEnabled){
-        fetchQSUserDetails(idToken);
-    }
-    fetchReportMetaData();
-    setFormData({ ...formData, isAuthenticated: true });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const poolData = {
-      UserPoolId: cognitoUserPoolId,
-      ClientId: cognitoClientId
-    };
-
-    const userPool = new CognitoUserPool(poolData);
-    const authenticationData = {
-      Username: formData.username,
-      Password: formData.password,
-    };
-
-    const authenticationDetails = new AuthenticationDetails(authenticationData);
-    const userData = {
-      Username: formData.username,
-      Pool: userPool,
-    };
-
-    const cognitoUser = new CognitoUser(userData);
-
-    cognitoUser.authenticateUser(authenticationDetails, {
-      onSuccess: (session) => {
-        const idToken = session.idToken.jwtToken;
-        handleAuthenticationSuccess(idToken);
-      },
-      onFailure: (err) => {
-        console.error('Authentication failed:', err);
-        if (err.code === 'NotAuthorizedException') {
-          setErrorMessage("Invalid Username or Password. Please enter a valid Username & Password.");
-        } else {
-          setErrorMessage('An error occurred. Please try again later.');
-        }
-      },
-
-      newPasswordRequired: (userAttributes, requiredAttributes) => { },
-    });
-  };
-
-  const handleSsoLogin = () => {
-    if (isSSOEnable && clientFlag) {
-      const ssoRedirectUrl = `${cognitoDomainUrl}/oauth2/authorize?identity_provider=${identityProvider}&redirect_uri=${redirectUrl}&response_type=TOKEN&client_id=${cognitoClientId}&scope=email%20openid`
-      window.location.href = ssoRedirectUrl;
-    }
-  };
 
 
-  if (formData.isAuthenticated) {
-    SessionManager.init();
-    const isSessionValid = SessionManager.isActive();
-    if (isSessionValid) {
-      return (
-        <div>
-          <Home />
-        </div>
-      );
-    }
-  }
+	useEffect(() => {
+		const payload = {
+			requestedObject: 'ClientDetails',
+		};
 
-  if (!clientFlag) {
-    return null;
-  }
+		fetchClientDetails(payload)
+			.then((ClientDetails) => {
+				setSSOFlag(ClientDetails.isSSOEnable);
+				setQSRegistrationFlag(ClientDetails.customQSRegistrationEnabled);
+				setCognitoDomainUrl(ClientDetails.cognitoDomainUrl);
+				setCognitoClientId(ClientDetails.cognitoClientId);
+				setCognitoUserPoolId(ClientDetails.cognitoUserPoolId);
+				if (ClientDetails.isSSOEnable) {
+					setIdentityProvider(ClientDetails.identityProvider)
+					// setIdentityPoolId(ClientDetails.identityPoolId)
+					// setIdentityProviderRegion(ClientDetails.identityProviderRegion)
+				}
+				setClientFlag(true);
+			})
+			.catch((error) => {
+				console.error('Error fetching client details:', error);
+			});
+	}, []);
 
-   return (
-      <div className="container">
-        <div className="left-section">
-          <div className="intro-div">
-            <text className="text-1">
-              MetricStream AiSPIRE is the industry’s first <br />
-              AI-powered, knowledge-centric GRC.
-            </text>
-            <text className="text-2">
-              AI-Powered GRC to Augment Decision-Making,
-              <br /> Prioritization, and Improve Efficiency.
-            </text>
-            <text className="text-2">30% reduction in controls, control tests.</text>
-            <div className="rectangle" />
-          </div>
-          <img src={laptop} alt="laptop" />
-        </div>
-        <div className="right-section">
-          <div className="right-content">
-            <div className="logo-div">
-              <img src={aispire} alt="logo" width="242" height="78" />
-            </div>
-           <form onSubmit={handleSubmit}>
-              <div className="login-form">
-                <div className="error-container">
-                  {errorMessage && (
-                    <div className="login-error-message">{errorMessage}</div>
-                  )}
-                </div>
-                <div className="login-input">
-                  <TextField
-                    name="username"
-                    label="Username"
-                    type="text"
-                    value={formData.username}
-                    onChange={handleInputChange}
-                    sx={{
-                      "& .MuiOutlinedInput-input": {
-                        width: "554px",
-                        height: "11px",
-                      },
-                      "& .MuiInputLabel-root": {
-                        fontFamily: "Open Sans",
-                        margin: "0px",
-                        fontStyle: "normal",
-                        fontWeight: "normal",
-                        fontSize: "13px",
-                        alignItems: "center",
-                        letterSpacing: "0.15px",
-                        color: "#706982 !important",
-                      },
-                    }}
-                  />
-                </div>
-                <div className="login-input">
-                  <TextField
-                    name="password"
-                    label="Password"
-                    type="password"
-                    value={formData.password}
-                    onChange={handleInputChange}
-                    sx={{
-                      "& .MuiOutlinedInput-input": {
-                        width: "554px",
-                        height: "11px",
-                      },
-                      "& .MuiInputLabel-root": {
-                        fontFamily: "Open Sans",
-                        margin: "0px",
-                        fontStyle: "normal",
-                        fontWeight: "normal",
-                        fontSize: "13px",
-                        alignItems: "center",
-                        letterSpacing: "0.15px",
-                        color: "#706982 !important",
-                      },
-                    }}
-                  />
-                </div>
-              <div class="login-button-div">
-                <Button variant="filled" class="login-button" type="submit">
-                  <Typography class="login-text">Login</Typography>
-                </Button>
-              </div>
-              </div>
-            </form>
-            {isSSOEnable && (
-              <div className="login-button-div-sso">
-                <div className='sso-separater'>
-                  <div className="sso-line" />
-                  <p className="sso-text">Or</p>
-                  <div className="sso-line" />
-                </div>
-                <Button variant="filled" class="sso-button" onClick={handleSsoLogin}>
-                  <Typography class="login-text">Sign in with SSO</Typography>
-                </Button>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-    );
-  }
+	useEffect(() => {
+		const urlParams = new URLSearchParams(window.location.search);
+
+		const processToken = async (code) => {
+			const tokenEndpoint = `${cognitoDomainUrl}/oauth2/token`;
+
+			const payload = {
+				grant_type: 'authorization_code',
+				client_id: cognitoClientId,
+				code: code,
+				redirect_uri: config.redirectUrl,
+			};
+
+			try {
+				const response = await fetch(tokenEndpoint, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded',
+					},
+					body: Object.keys(payload)
+						.map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(payload[key]))
+						.join('&'),
+				});
+				console.log("response::", response)
+				if (!response.ok) {
+					console.error("!response.ok::", response);
+				}
+
+				const tokenData = await response.json();
+
+				if (tokenData && tokenData.id_token) {
+					const idToken = tokenData.id_token;
+					handleAuthenticationSuccess(idToken);
+				}
+
+			} catch (error) {
+				console.error('Error fetching ID token:', error);
+				throw error;
+			}
+		};
+
+		if (urlParams.has('code')) {
+			const code = urlParams.get('code');
+			processToken(code);
+		}
+	}, [cognitoClientId, cognitoDomainUrl ]);
+
+	const fetchQSUserDetails = (idToken) => {
+		const payload = {
+			openIdToken: idToken
+		};
+		const apiUrl = '/metricstream/api/fetch-QSUserDetails';
+		return fetch(apiUrl, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(payload),
+			})
+			.then((response) => response.json())
+			.catch((error) => {
+				console.error('Error fetching client data:', error);
+				throw error;
+			});
+	}
+
+	function fetchClientDetails(payload) {
+		const apiUrl = '/metricstream/api/fetch-clientobjects';
+		return fetch(apiUrl, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(payload),
+			})
+			.then((response) => response.json())
+			.catch((error) => {
+				console.error('Error fetching client data:', error);
+				throw error;
+			});
+	}
+
+	const handleInputChange = (e) => {
+		const {
+			name,
+			value
+		} = e.target;
+		setFormData({
+			...formData,
+			[name]: value,
+		});
+	};
+
+	const fetchReportMetaData = () => {
+		const payload = {};
+
+		fetch('/metricstream/api/tasks/fetch-ReportMetaData', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(payload),
+			})
+			.then((response) => {
+				if (!response.ok) {
+					throw new Error(`Network response was not ok: ${response.status}`);
+				}
+				return response.json();
+			})
+			.then((data) => {
+				if (data) {
+					localStorage.setItem('ReportMetaData', JSON.stringify(data));
+				} else {
+					console.error('Error: Invalid response data format.');
+				}
+			})
+			.catch((error) => {
+				console.error('Error fetching report data:', error);
+			});
+	};
+
+	const handleAuthenticationSuccess = (idToken) => {
+		CookieManager.setCookie('OptimizerID', idToken);
+		if (customQSRegistrationEnabled) {
+			fetchQSUserDetails(idToken);
+		}
+		fetchReportMetaData();
+		setFormData({
+			...formData,
+			isAuthenticated: true
+		});
+	};
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+
+		const poolData = {
+			UserPoolId: cognitoUserPoolId,
+			ClientId: cognitoClientId
+		};
+
+		const userPool = new CognitoUserPool(poolData);
+		const authenticationData = {
+			Username: formData.username,
+			Password: formData.password,
+		};
+
+		const authenticationDetails = new AuthenticationDetails(authenticationData);
+		const userData = {
+			Username: formData.username,
+			Pool: userPool,
+		};
+
+		const cognitoUser = new CognitoUser(userData);
+
+		cognitoUser.authenticateUser(authenticationDetails, {
+			onSuccess: (session) => {
+				const idToken = session.idToken.jwtToken;
+				handleAuthenticationSuccess(idToken);
+			},
+			onFailure: (err) => {
+				console.error('Authentication failed:', err);
+				if (err.code === 'NotAuthorizedException') {
+					setErrorMessage("Invalid Username or Password. Please enter a valid Username & Password.");
+				} else {
+					setErrorMessage('An error occurred. Please try again later.');
+				}
+			},
+
+			newPasswordRequired: (userAttributes, requiredAttributes) => {},
+		});
+	};
+
+	const handleSsoLogin = () => {
+		if (isSSOEnable && clientFlag) {
+			const ssoRedirectUrl = `${cognitoDomainUrl}/oauth2/authorize?identity_provider=${identityProvider}&redirect_uri=${redirectUrl}&response_type=CODE&client_id=${cognitoClientId}&scope=email%20openid`
+			window.location.href = ssoRedirectUrl;
+		}
+	};
+
+	if (formData.isAuthenticated) {
+		SessionManager.init();
+		const isSessionValid = SessionManager.isActive();
+		if (isSessionValid) {
+			const newUrl = `${window.location.origin}${window.location.pathname}`;
+			window.history.replaceState({}, document.title, newUrl);
+			return ( <
+				div >
+				<
+				Home / >
+				<
+				/div>
+			);
+		}
+	}
+
+	if (!clientFlag) {
+		return null;
+	}
+
+	return ( <
+		div className = "container" >
+		<
+		div className = "left-section" >
+		<
+		div className = "intro-div" >
+		<
+		text className = "text-1" >
+		MetricStream AiSPIRE is the industry’ s first < br / >
+		AI - powered, knowledge - centric GRC. <
+		/text> <
+		text className = "text-2" >
+		AI - Powered GRC to Augment Decision - Making, <
+		br / > Prioritization, and Improve Efficiency. <
+		/text> <
+		text className = "text-2" > 30 % reduction in controls, control tests. < /text> <
+		div className = "rectangle" / >
+		<
+		/div> <
+		img src = {
+			laptop
+		}
+		alt = "laptop" / >
+		<
+		/div> <
+		div className = "right-section" >
+		<
+		div className = "right-content" >
+		<
+		div className = "logo-div" >
+		<
+		img src = {
+			aispire
+		}
+		alt = "logo"
+		width = "242"
+		height = "78" / >
+		<
+		/div> <
+		form onSubmit = {
+			handleSubmit
+		} >
+		<
+		div className = "login-form" >
+		<
+		div className = "error-container" > {
+			errorMessage && ( <
+				div className = "login-error-message" > {
+					errorMessage
+				} < /div>
+			)
+		} <
+		/div> <
+		div className = "login-input" >
+		<
+		TextField name = "username"
+		label = "Username"
+		type = "text"
+		value = {
+			formData.username
+		}
+		onChange = {
+			handleInputChange
+		}
+		sx = {
+			{
+				"& .MuiOutlinedInput-input": {
+					width: "554px",
+					height: "11px",
+				},
+				"& .MuiInputLabel-root": {
+					fontFamily: "Open Sans",
+					margin: "0px",
+					fontStyle: "normal",
+					fontWeight: "normal",
+					fontSize: "13px",
+					alignItems: "center",
+					letterSpacing: "0.15px",
+					color: "#706982 !important",
+				},
+			}
+		}
+		/> <
+		/div> <
+		div className = "login-input" >
+		<
+		TextField name = "password"
+		label = "Password"
+		type = "password"
+		value = {
+			formData.password
+		}
+		onChange = {
+			handleInputChange
+		}
+		sx = {
+			{
+				"& .MuiOutlinedInput-input": {
+					width: "554px",
+					height: "11px",
+				},
+				"& .MuiInputLabel-root": {
+					fontFamily: "Open Sans",
+					margin: "0px",
+					fontStyle: "normal",
+					fontWeight: "normal",
+					fontSize: "13px",
+					alignItems: "center",
+					letterSpacing: "0.15px",
+					color: "#706982 !important",
+				},
+			}
+		}
+		/> <
+		/div> <
+		div class = "login-button-div" >
+		<
+		Button variant = "filled"
+		class = "login-button"
+		type = "submit" >
+		<
+		Typography class = "login-text" > Login < /Typography> <
+		/Button> <
+		/div> <
+		/div> <
+		/form> {
+			isSSOEnable && ( <
+				div className = "login-button-div-sso" >
+				<
+				div className = 'sso-separater' >
+				<
+				div className = "sso-line" / >
+				<
+				p className = "sso-text" > Or < /p> <
+				div className = "sso-line" / >
+				<
+				/div> <
+				Button variant = "filled"
+				class = "sso-button"
+				onClick = {
+					handleSsoLogin
+				} >
+				<
+				Typography class = "login-text" > Sign in with SSO < /Typography> <
+				/Button> <
+				/div>
+			)
+		} <
+		/div> <
+		/div> <
+		/div>
+	);
+}

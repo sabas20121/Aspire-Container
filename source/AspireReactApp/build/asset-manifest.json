@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.d2a41c6e.css",
-    "main.js": "/static/js/main.4a7e1fb4.js",
+    "main.css": "/static/css/main.3760fcee.css",
+    "main.js": "/static/js/main.ba83e3e0.js",
     "static/js/787.0e6afd38.chunk.js": "/static/js/787.0e6afd38.chunk.js",
+    "static/media/laptop.png": "/static/media/laptop.3c3aee5742d043b3e881.png",
     "static/media/open-sans-cyrillic-ext-wght-normal.woff2": "/static/media/open-sans-cyrillic-ext-wght-normal.43cc2a354081eca0d3db.woff2",
     "static/media/open-sans-latin-wght-normal.woff2": "/static/media/open-sans-latin-wght-normal.d1618819d312a87e51d4.woff2",
     "static/media/open-sans-latin-ext-wght-normal.woff2": "/static/media/open-sans-latin-ext-wght-normal.e2041256709d3a102380.woff2",
@@ -10,6 +11,7 @@
     "static/media/open-sans-cyrillic-wght-normal.woff2": "/static/media/open-sans-cyrillic-wght-normal.4cf9273e86975e2f5800.woff2",
     "static/media/ms-ai.svg": "/static/media/ms-ai.841dbc29b46003402dcdf7be45fdf24f.svg",
     "static/media/open-sans-greek-wght-normal.woff2": "/static/media/open-sans-greek-wght-normal.f8befbe498f316bd8125.woff2",
+    "static/media/aispire-login.svg": "/static/media/aispire-login.7b9d669f407688395540e4006d95c1f5.svg",
     "static/media/open-sans-hebrew-wght-normal.woff2": "/static/media/open-sans-hebrew-wght-normal.d49e1c3c822f0bcf932c.woff2",
     "static/media/open-sans-vietnamese-wght-normal.woff2": "/static/media/open-sans-vietnamese-wght-normal.4dacca519d6a81fb97f4.woff2",
     "static/media/ai.svg": "/static/media/ai.611b5b6e8224fd3388f3493df858e584.svg",
@@ -26,20 +28,20 @@
     "static/media/chatquestioniconfilled.svg": "/static/media/chatquestioniconfilled.28799bd930f7f48eaa2940e7fc1ae32f.svg",
     "static/media/reporticon.svg": "/static/media/reporticon.899d58739e7a835e0d5e4fe1536a15cc.svg",
     "static/media/graph.svg": "/static/media/graph.ecd4eed74c927431f47e3048a608a84b.svg",
-    "static/media/notificationfilled.svg": "/static/media/notificationfilled.86bef64defeec88812d720a3f1a7312c.svg",
     "index.html": "/index.html",
+    "static/media/notificationfilled.svg": "/static/media/notificationfilled.86bef64defeec88812d720a3f1a7312c.svg",
     "static/media/dashboard.svg": "/static/media/dashboard.9eaba828c21568ab8746568e4bb72a3a.svg",
     "static/media/logout.svg": "/static/media/logout.a34f62ffa60aa2dc4169124b8aa5f93d.svg",
     "static/media/dashboardfilled.svg": "/static/media/dashboardfilled.5207f990e7769fbb440d20e4c93fdcfd.svg",
     "static/media/graphfilled.svg": "/static/media/graphfilled.0c2216564f44fc8f6be11b19920f692c.svg",
     "static/media/chevronright.svg": "/static/media/chevronright.93085362f49f735c141126e63a02f375.svg",
     "static/media/chevronleft.svg": "/static/media/chevronleft.59442f2fb2589b7ae9e142bc77e784de.svg",
-    "main.d2a41c6e.css.map": "/static/css/main.d2a41c6e.css.map",
-    "main.4a7e1fb4.js.map": "/static/js/main.4a7e1fb4.js.map",
+    "main.3760fcee.css.map": "/static/css/main.3760fcee.css.map",
+    "main.ba83e3e0.js.map": "/static/js/main.ba83e3e0.js.map",
     "787.0e6afd38.chunk.js.map": "/static/js/787.0e6afd38.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d2a41c6e.css",
-    "static/js/main.4a7e1fb4.js"
+    "static/css/main.3760fcee.css",
+    "static/js/main.ba83e3e0.js"
   ]
 }
