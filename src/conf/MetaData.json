@@ -19,7 +19,7 @@
     "identityType": "IAM",
     "externalLoginFederationProviderType": "CUSTOM_OIDC",
     "namespace": "default",
-    "groupName": "Quicksight"
+    "groupName": "Quicksight_access"
   },
   "GraphConfiguration": {
     "Connection_ID": "",
