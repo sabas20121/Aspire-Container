@@ -32,6 +32,7 @@ const getReportObject = require('./src/routes/GetReportObjectRouter');
 const getClientObject = require('./src/routes/GetClientObjectRouter');
 const getQSUserDetails = require('./src/routes/GetQuicksightUserDetailsRouter');
 const getIdToken = require('./src/routes/GetIdTokenRouter');
+const getIdentityId = require('./src/routes/GetIdentityIdRouter');
 
 const JsonFileLoader = require('./src/utils/JsonFileLoader');
 const jsonFileLoader = new JsonFileLoader();
@@ -46,6 +47,7 @@ app.use(endpointJson.production.fetchReportObjects, getReportObject);
 app.use(endpointJson.production.fetchClientObjects, getClientObject);
 app.use(endpointJson.production.fetchQSUserDetails, getQSUserDetails);
 app.use(endpointJson.production.fetchIdToken, getIdToken);
+app.use(endpointJson.production.fetchIdentityId, getIdentityId);
 
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.static(path.join(__dirname, 'dist')));
