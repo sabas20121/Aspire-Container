@@ -45,3 +45,13 @@ W
 'source/AspireReactApp/public/index.html,4\a\4a2ce41e24d098d244a53832db4de0a36ef3f2fb
 a
 1source/AspireReactApp/src/pages/home/LeftPanel.js,8\b\8b37718ce4ecf72c5a0b9ce567ec49c5ba1d5cbc
+M
+src/service/CognitoService.js,f\6\f6dfb3fe627a0865d7c1f35159d764526dc2ff28
+N
+src/routes/GetIdTokenRouter.js,c\f\cfe6b08694c2306817799ff51fee5ff901f6fd43
+[
++src/controllers/CognitoIdTokenController.js,c\d\cdb9e980f8143f1699fbbaeb92c5017f1c31638c
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e

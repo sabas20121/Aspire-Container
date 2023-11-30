@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cec8fa52-e7fd-4273-ba35-a8bd49b506bc" name="Changes" comment="Custom Login &amp; QS Registration Implementation." />
+    <list default="true" id="cec8fa52-e7fd-4273-ba35-a8bd49b506bc" name="Changes" comment="Custom Login &amp; QS Registration Implementation.">
+      <change afterPath="$PROJECT_DIR$/src/controllers/CognitoIdTokenController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/GetIdTokenRouter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/CognitoService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conf/aspire_url_map_environment.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/conf/aspire_url_map_environment.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

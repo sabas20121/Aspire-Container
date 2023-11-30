@@ -7,6 +7,7 @@
     "fetchReportMetaData": "/metricstream/api/tasks/fetch-ReportMetaData",
     "fetchReportObjects": "/metricstream/api/fetch-reportobjects",
     "fetchClientObjects": "/metricstream/api/fetch-clientobjects",
-    "fetchQSUserDetails": "/metricstream/api/fetch-QSUserDetails"
+    "fetchQSUserDetails": "/metricstream/api/fetch-QSUserDetails",
+    "fetchIdToken": "/metricstream/api/fetch-IdToken"
   }
 }
