@@ -39,6 +39,8 @@
     "cognitoClientId": "7ls3voq3vlc1c640n3rdj8ps0d",
     "cognitoDomainUrl": "https://azurefedsso-aispire.auth.us-east-2.amazoncognito.com",
     "cognitoUserPoolId": "us-east-2_4emRuEOCk",
+    "cognitoIdentityPoolId": "us-east-2:655b8d82-5deb-46a6-8046-ab5b568ad4ec",
+    "cognitoIdentityRegion": "us-east-2",
     "identityProvider": "AzureFedSSO-aispire"
   },
   "InstanceURL": {

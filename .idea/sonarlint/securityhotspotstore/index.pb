@@ -55,3 +55,9 @@ S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
 ]
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
+U
+%src/service/CognitoIdentityService.js,d\b\dbab5da306acf817986e5a6ee645c5cca196fd5e
+Q
+!src/routes/GetIdentityIdRouter.js,1\1\11518a1b9e65d30f36f0ac6ff8f26dd8693ec382
+\
+,src/controllers/CognitoIdentityController.js,7\4\744dbcd295eb8e16931f4f16b16799a7aaf2ed6f
