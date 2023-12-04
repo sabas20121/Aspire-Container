@@ -40,11 +40,12 @@ export default function Login() {
 	const [errorMessage, setErrorMessage] = useState('');
 	const [clientFlag, setClientFlag] = useState(null);
 	const [isSSOEnable, setSSOFlag] = useState(null);
-	const [customQSRegistrationEnabled, setQSRegistrationFlag] = useState(null);
+	// const [customQSRegistrationEnabled, setQSRegistrationFlag] = useState(null);
 	const [cognitoDomainUrl, setCognitoDomainUrl] = useState(null);
 	const [cognitoClientId, setCognitoClientId] = useState(null);
 	const [cognitoUserPoolId, setCognitoUserPoolId] = useState(null);
 	const [identityProvider, setIdentityProvider] = useState(null);
+	const [code, setCode] = useState(null);
 	// const [identityPoolId, setIdentityPoolId] = useState(null);
 	// const [identityProviderRegion, setIdentityProviderRegion] = useState(null);
 
@@ -52,14 +53,21 @@ export default function Login() {
 
 
 	useEffect(() => {
+
 		const payload = {
 			requestedObject: 'ClientDetails',
 		};
 
-		fetchClientDetails(payload)
+		const urlParams = new URLSearchParams(window.location.search);
+
+		if (urlParams.has('code')) {
+			setCode(urlParams.get('code'));
+		} else{
+			fetchClientDetails(payload)
 			.then((ClientDetails) => {
 				setSSOFlag(ClientDetails.isSSOEnable);
-				setQSRegistrationFlag(ClientDetails.customQSRegistrationEnabled);
+				sessionStorage.setItem('customQSRegistrationEnabled', ClientDetails.customQSRegistrationEnabled);
+				// setQSRegistrationFlag(ClientDetails.customQSRegistrationEnabled);
 				setCognitoDomainUrl(ClientDetails.cognitoDomainUrl);
 				setCognitoClientId(ClientDetails.cognitoClientId);
 				setCognitoUserPoolId(ClientDetails.cognitoUserPoolId);
@@ -73,54 +81,44 @@ export default function Login() {
 			.catch((error) => {
 				console.error('Error fetching client details:', error);
 			});
+		}
 	}, []);
 
 	useEffect(() => {
-		const urlParams = new URLSearchParams(window.location.search);
-
-		const processToken = async (code) => {
-			const tokenEndpoint = `${cognitoDomainUrl}/oauth2/token`;
-
+		const fetchIdToken = async (authorizationCode) => {
+			try {
 			const payload = {
-				grant_type: 'authorization_code',
-				client_id: cognitoClientId,
-				code: code,
-				redirect_uri: config.redirectUrl,
+				code: authorizationCode,
+				redirectUrl: window.location.origin,
 			};
 
-			try {
-				const response = await fetch(tokenEndpoint, {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/x-www-form-urlencoded',
-					},
-					body: Object.keys(payload)
-						.map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(payload[key]))
-						.join('&'),
-				});
-				console.log("response::", response)
-				if (!response.ok) {
-					console.error("!response.ok::", response);
-				}
+			const apiUrl = '/metricstream/api/fetch-IdToken';
+			const response = await fetch(apiUrl, {
+				method: 'POST',
+				headers: {
+				'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(payload),
+			});
 
-				const tokenData = await response.json();
+			if (!response.ok) {
+				console.error('Error fetching ID token:', response.statusText);
+				throw new Error('Failed to fetch ID token');
+			}
 
-				if (tokenData && tokenData.id_token) {
-					const idToken = tokenData.id_token;
-					handleAuthenticationSuccess(idToken);
-				}
+			const data = await response.json();
+			const idToken = data?.data?.id_token;
+
+			if (idToken) {
+				handleAuthenticationSuccess(idToken);
+			}
 
 			} catch (error) {
-				console.error('Error fetching ID token:', error);
-				throw error;
+			console.error('Error fetching ID token:', error.message);
 			}
 		};
-
-		if (urlParams.has('code')) {
-			const code = urlParams.get('code');
-			processToken(code);
-		}
-	}, [cognitoClientId, cognitoDomainUrl ]);
+		fetchIdToken(code);
+	}, [code]);
 
 	const fetchQSUserDetails = (idToken) => {
 		const payload = {
@@ -198,6 +196,7 @@ export default function Login() {
 
 	const handleAuthenticationSuccess = (idToken) => {
 		CookieManager.setCookie('OptimizerID', idToken);
+		const customQSRegistrationEnabled = sessionStorage.getItem('customQSRegistrationEnabled');
 		if (customQSRegistrationEnabled) {
 			fetchQSUserDetails(idToken);
 		}
@@ -244,7 +243,7 @@ export default function Login() {
 				}
 			},
 
-			newPasswordRequired: (userAttributes, requiredAttributes) => {},
+			// newPasswordRequired: (userAttributes, requiredAttributes) => {},
 		});
 	};
 
@@ -261,13 +260,11 @@ export default function Login() {
 		if (isSessionValid) {
 			const newUrl = `${window.location.origin}${window.location.pathname}`;
 			window.history.replaceState({}, document.title, newUrl);
-			return ( <
-				div >
-				<
-				Home / >
-				<
-				/div>
-			);
+      return (
+        <div>
+          <Home/>
+        </div>
+      );
 		}
 	}
 
@@ -275,156 +272,106 @@ export default function Login() {
 		return null;
 	}
 
-	return ( <
-		div className = "container" >
-		<
-		div className = "left-section" >
-		<
-		div className = "intro-div" >
-		<
-		text className = "text-1" >
-		MetricStream AiSPIRE is the industry’ s first < br / >
-		AI - powered, knowledge - centric GRC. <
-		/text> <
-		text className = "text-2" >
-		AI - Powered GRC to Augment Decision - Making, <
-		br / > Prioritization, and Improve Efficiency. <
-		/text> <
-		text className = "text-2" > 30 % reduction in controls, control tests. < /text> <
-		div className = "rectangle" / >
-		<
-		/div> <
-		img src = {
-			laptop
-		}
-		alt = "laptop" / >
-		<
-		/div> <
-		div className = "right-section" >
-		<
-		div className = "right-content" >
-		<
-		div className = "logo-div" >
-		<
-		img src = {
-			aispire
-		}
-		alt = "logo"
-		width = "242"
-		height = "78" / >
-		<
-		/div> <
-		form onSubmit = {
-			handleSubmit
-		} >
-		<
-		div className = "login-form" >
-		<
-		div className = "error-container" > {
-			errorMessage && ( <
-				div className = "login-error-message" > {
-					errorMessage
-				} < /div>
-			)
-		} <
-		/div> <
-		div className = "login-input" >
-		<
-		TextField name = "username"
-		label = "Username"
-		type = "text"
-		value = {
-			formData.username
-		}
-		onChange = {
-			handleInputChange
-		}
-		sx = {
-			{
-				"& .MuiOutlinedInput-input": {
-					width: "554px",
-					height: "11px",
-				},
-				"& .MuiInputLabel-root": {
-					fontFamily: "Open Sans",
-					margin: "0px",
-					fontStyle: "normal",
-					fontWeight: "normal",
-					fontSize: "13px",
-					alignItems: "center",
-					letterSpacing: "0.15px",
-					color: "#706982 !important",
-				},
-			}
-		}
-		/> <
-		/div> <
-		div className = "login-input" >
-		<
-		TextField name = "password"
-		label = "Password"
-		type = "password"
-		value = {
-			formData.password
-		}
-		onChange = {
-			handleInputChange
-		}
-		sx = {
-			{
-				"& .MuiOutlinedInput-input": {
-					width: "554px",
-					height: "11px",
-				},
-				"& .MuiInputLabel-root": {
-					fontFamily: "Open Sans",
-					margin: "0px",
-					fontStyle: "normal",
-					fontWeight: "normal",
-					fontSize: "13px",
-					alignItems: "center",
-					letterSpacing: "0.15px",
-					color: "#706982 !important",
-				},
-			}
-		}
-		/> <
-		/div> <
-		div class = "login-button-div" >
-		<
-		Button variant = "filled"
-		class = "login-button"
-		type = "submit" >
-		<
-		Typography class = "login-text" > Login < /Typography> <
-		/Button> <
-		/div> <
-		/div> <
-		/form> {
-			isSSOEnable && ( <
-				div className = "login-button-div-sso" >
-				<
-				div className = 'sso-separater' >
-				<
-				div className = "sso-line" / >
-				<
-				p className = "sso-text" > Or < /p> <
-				div className = "sso-line" / >
-				<
-				/div> <
-				Button variant = "filled"
-				class = "sso-button"
-				onClick = {
-					handleSsoLogin
-				} >
-				<
-				Typography class = "login-text" > Sign in with SSO < /Typography> <
-				/Button> <
-				/div>
-			)
-		} <
-		/div> <
-		/div> <
-		/div>
-	);
+  return (
+    <div className="container">
+      <div className="left-section">
+        <div className="intro-div">
+          <text className="text-1">
+            MetricStream AiSPIRE is the industry’s first <br />
+            AI-powered, knowledge-centric GRC.
+          </text>
+          <text className="text-2">
+            AI-Powered GRC to Augment Decision-Making, <br />
+            Prioritization, and Improve Efficiency.
+          </text>
+          <text className="text-2">30% reduction in controls, control tests.</text>
+          <div className="rectangle" />
+        </div>
+        <img src={laptop} alt="laptop" />
+      </div>
+      <div className="right-section">
+        <div className="right-content">
+          <div className="logo-div">
+            <img src={aispire} alt="logo" width="242" height="78" />
+          </div>
+          <form onSubmit={handleSubmit}>
+            <div className="login-form">
+              <div className="error-container">
+                {errorMessage && (
+                  <div className="login-error-message">{errorMessage}</div>
+                )}
+              </div>
+              <div className="login-input">
+                <TextField
+                  name="username"
+                  label="Username"
+                  type="text"
+                  value={formData.username}
+                  onChange={handleInputChange}
+                  sx={{
+                    "& .MuiOutlinedInput-input": {
+                      width: "554px",
+                      height: "11px",
+                    },
+                    "& .MuiInputLabel-root": {
+                      fontFamily: "Open Sans",
+                      margin: "0px",
+                      fontStyle: "normal",
+                      fontWeight: "normal",
+                      fontSize: "13px",
+                      alignItems: "center",
+                      letterSpacing: "0.15px",
+                      color: "#706982 !important",
+                    },
+                  }}
+                />
+              </div>
+              <div className="login-input">
+                <TextField
+                  name="password"
+                  label="Password"
+                  type="password"
+                  value={formData.password}
+                  onChange={handleInputChange}
+                  sx={{
+                    "& .MuiOutlinedInput-input": {
+                      width: "554px",
+                      height: "11px",
+                    },
+                    "& .MuiInputLabel-root": {
+                      fontFamily: "Open Sans",
+                      margin: "0px",
+                      fontStyle: "normal",
+                      fontWeight: "normal",
+                      fontSize: "13px",
+                      alignItems: "center",
+                      letterSpacing: "0.15px",
+                      color: "#706982 !important",
+                    },
+                  }}
+                />
+              </div>
+              <div class="login-button-div">
+                <Button variant="filled" class="login-button" type="submit">
+                  <Typography class="login-text">Login</Typography>
+                </Button>
+              </div>
+            </div>
+          </form>
+          {isSSOEnable && (
+            <div className="login-button-div-sso">
+              <div className='sso-separater'>
+                <div className="sso-line" />
+                <p className="sso-text">Or</p>
+                <div className="sso-line" />
+              </div>
+              <Button variant="filled" class="sso-button" onClick={handleSsoLogin}>
+                <Typography class="login-text">Sign in with SSO</Typography>
+              </Button>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
 }

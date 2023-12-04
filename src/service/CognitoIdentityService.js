@@ -1,6 +1,5 @@
 const MetaData = require('../conf/MetaData.json');
 const AWS = require('aws-sdk');
-const fetch = require('node-fetch');
 
 const cognitoIdentityRegion = MetaData.ClientDetails.cognitoIdentityRegion;
 
@@ -25,10 +24,9 @@ async function getIdToken(code, redirectUrl) {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            body: new URLSearchParams(payload),
-            // body: Object.keys(payload)
-            //     .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(payload[key]))
-            //     .join('&'),
+            body: Object.keys(payload)
+                .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(payload[key]))
+                .join('&'),
         });
 
         if (!response.ok) {

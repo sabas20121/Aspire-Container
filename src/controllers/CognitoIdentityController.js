@@ -5,15 +5,11 @@ async function getIdToken(req, res) {
     const { code,redirectUrl } = req.body;
 
     try {
-        const getIdToken = await CognitoIdentityService.getIdToken(code, redirectUrl);
-        if (getIdToken && getIdToken.OpenIdToken && getIdToken.AccessToken && getIdToken.RefreshToken) {
+        const getTokenResponse = await CognitoIdentityService.getIdToken(code, redirectUrl);
+        if (getTokenResponse ) {
             res.json({
                 status: 200,
-                body: {
-                    OpenIdToken: getIdToken.OpenIdToken,
-                    AccessToken: getIdToken.AccessToken,
-                    RefreshToken:getIdToken.RefreshToken,
-                }
+                data: getTokenResponse
             });
         }
 
