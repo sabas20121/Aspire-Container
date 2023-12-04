@@ -38,7 +38,7 @@ function App() {
 
         processReport();
     }, []);
-
+    SessionManager.init();
     const isSessionValid = SessionManager.isActive()
 
     return (
