@@ -1,34 +1,55 @@
 [
     {
-        "key": "Issue_To_Action_Mapping",
-        "reportName": "Issue To Action Mapping",
-        "fileName": "Sample/CIBC_Aspire_Data/final_issue_data_file_cibc_Issue_Actions.csv",
+        "key": "ControlAssessment",
+        "reportName": "Control Assessment",
+        "filePath": "GRC/AISPIRE/quicksight/Ag-Grid/Control_Assessment.json",
         "columnDefs": [
             {
-                "field": "ISSUE_ID",
-                "headerName": "Issue ID",
+                "field": "Control Theme",
+                "headerName": "Control Theme",
                 "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
+                "chartDataType": "category",
                 "checkboxSelection": true,
-                "headerCheckboxSelection": false,
+                "headerCheckboxSelection": true,
                 "rowDrag": true,
-                "width": 220,
+                "enableRowGroup": true,
+                "enablePivot": true,
+                "enableValue": true,
+                "minWidth": 300,
+                "width": 300,
                 "cellStyle": {
                     "lineHeight": "1.8",
                     "whiteSpace": "normal",
                     "wordBreak": "break-word",
                     "paddingTop": "10px"
                 },
-                "tooltipField": "issue_id"
+                "tooltipField": "Control Theme",
+                "floatingFilter": true
             },
             {
-                "field": "ISSUE_TITLE",
-                "headerName": "Issue Title",
+                "field": "Contro ID",
+                "headerName": "Control ID",
+                "chartDataType": "category",
+                "enableRowGroup": true,
+                "enablePivot": true,
+                "enableValue": true,
+                "minWidth": 210,
+                "width": 210,
+                "cellStyle": {
+                    "lineHeight": "1.8",
+                    "whiteSpace": "normal",
+                    "wordBreak": "break-word",
+                    "paddingTop": "10px"
+                },
+                "tooltipField": "Contro ID",
+                "floatingFilter": true,
+                "filter": true
+            },
+            {
+                "field": "Control Name",
+                "headerName": "Control Name",
                 "filter": true,
-                "chartDataType": "series",
+                "chartDataType": "category",
                 "enableRowGroup": true,
                 "enablePivot": true,
                 "enableValue": true,
@@ -39,108 +60,98 @@
                     "wordBreak": "break-word",
                     "paddingTop": "10px"
                 },
-                "tooltipField": "issue_title"
+                "tooltipField": "Control Name",
+                "floatingFilter": true
             },
             {
-                "field": "ISSUE_DESCRIPTION",
-                "headerName": "Issue Description",
+                "field": "Control Description",
+                "headerName": "Control Description",
                 "filter": true,
-                "chartDataType": "series",
+                "chartDataType": "category",
                 "enableRowGroup": true,
                 "enablePivot": true,
                 "enableValue": true,
                 "width": 350,
                 "cellStyle": {
-                    "lineHeight": "1.8",
+                    "lineHeight": "1.9",
                     "whiteSpace": "normal",
                     "wordBreak": "break-word",
-                    "paddingTop": "10px"
+                    "paddingTop": "12px"
                 },
-                "tooltipField": "issue_description"
+                "tooltipField": "Control Description",
+                "floatingFilter": true
             },
             {
-                "field": "Action ID",
-                "headerName": "Action ID",
+                "field": "Control Assessment",
+                "headerName": "Control Assessment",
                 "filter": true,
-                "chartDataType": "series",
+                "chartDataType": "category",
                 "enableRowGroup": true,
                 "enablePivot": true,
                 "enableValue": true,
-                "width": 220,
+                "width": 170,
                 "cellStyle": {
                     "lineHeight": "1.8",
                     "whiteSpace": "normal",
                     "wordBreak": "break-word",
                     "paddingTop": "10px"
                 },
-                "tooltipField": "Action ID"
-            },
-            {
-                "field": "Action Title",
-                "headerName": "Action Title",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 320,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Action Title"
-            },
-            {
-                "field": "Action Description",
-                "headerName": "Action Description",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 350,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Action Description"
+                "tooltipField": "Control Assessment",
+                "floatingFilter": true
             }
         ]
     },
     {
-        "key": "Issue_With_No_Actions",
-        "reportName": "Issue With No Actions",
-        "filePath": "Sample/CIBC_Aspire_Data/final_issue_data_file_cibc_only_Issue.csv",
-        "columnDefs": [
+        "key": "PreventiveDetective",
+        "reportName": "Preventive Detective Controls",
+        "url": "GRC/AISPIRE/quicksight/Ag-Grid/Preventive_Detective.json",
+        "columns": [
             {
-                "field": "ISSUE_ID",
-                "headerName": "Issue ID",
+                "field": "Control Theme",
+                "headerName": "Control Theme",
                 "filter": true,
-                "chartDataType": "series",
+                "chartDataType": "category",
+                "checkboxSelection": true,
+                "headerCheckboxSelection": true,
+                "rowDrag": true,
                 "enableRowGroup": true,
                 "enablePivot": true,
                 "enableValue": true,
-                "checkboxSelection": true,
-                "headerCheckboxSelection": false,
-                "rowDrag": true,
-                "width": 120,
+                "minWidth": 300,
+                "width": 300,
                 "cellStyle": {
                     "lineHeight": "1.8",
                     "whiteSpace": "normal",
                     "wordBreak": "break-word",
                     "paddingTop": "10px"
                 },
-                "tooltipField": "ISSUE_ID"
+                "tooltipField": "Control Theme",
+                "floatingFilter": true
             },
             {
-                "field": "ISSUE_TITLE",
-                "headerName": "Issue Title",
+                "field": "Control ID",
+                "headerName": "Control ID",
+                "chartDataType": "category",
+                "enableRowGroup": true,
+                "enablePivot": true,
+                "enableValue": true,
+                "minWidth": 210,
+                "width": 210,
+                "cellStyle": {
+                    "lineHeight": "1.8",
+                    "whiteSpace": "normal",
+                    "wordBreak": "break-word",
+                    "paddingTop": "10px"
+                },
+                "tooltipField": "Control ID",
+                "floatingFilter": true,
+                "filter": true
+            },
+            {
+                "field": "Control Name",
+                "headerName": "Control Name",
                 "filter": true,
-                "chartDataType": "series",
+                "chartDataType": "category",
                 "enableRowGroup": true,
                 "enablePivot": true,
                 "enableValue": true,
@@ -149,834 +160,135 @@
                     "lineHeight": "1.8",
                     "whiteSpace": "normal",
                     "wordBreak": "break-word",
-                    "paddingTop": "10px"
+                    "paddingTop": "12px"
                 },
-                "tooltipField": "ISSUE_TITLE"
+                "tooltipField": "Control Name",
+                "floatingFilter": true
             },
             {
-                "field": "ISSUE_DESCRIPTION",
-                "headerName": "Issue Description",
+                "field": "Control Description",
+                "headerName": "Control Description",
                 "filter": true,
-                "chartDataType": "series",
+                "chartDataType": "category",
                 "enableRowGroup": true,
                 "enablePivot": true,
                 "enableValue": true,
                 "width": 350,
                 "cellStyle": {
-                    "lineHeight": "1.8",
+                    "lineHeight": "1.9",
                     "whiteSpace": "normal",
                     "wordBreak": "break-word",
-                    "paddingTop": "10px"
+                    "paddingTop": "12px"
                 },
-                "tooltipField": "ISSUE_DESCRIPTION"
-            }
-        ]
-    },
-    {
-        "key": "Issue_By_Type",
-        "reportName": "Issue By Type",
-        "filePath": "Sample/CIBC_Aspire_Data/final_issue_data_file_cibc_only_Issue.csv",
-        "columnDefs": [
-            {
-                "field": "ISSUE_ID",
-                "headerName": "Issue ID",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "checkboxSelection": true,
-                "headerCheckboxSelection": false,
-                "rowDrag": true,
-                "width": 120,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "issue_id"
+                "tooltipField": "Control Description",
+                "floatingFilter": true
             },
             {
-                "field": "ISSUE_TITLE",
-                "headerName": "Issue Title",
+                "field": "Purpose",
+                "headerName": "Purpose",
                 "filter": true,
-                "chartDataType": "series",
+                "chartDataType": "category",
                 "enableRowGroup": true,
                 "enablePivot": true,
                 "enableValue": true,
-                "width": 220,
+                "width": 170,
                 "cellStyle": {
-                    "lineHeight": "1.8",
+                    "lineHeight": "1.9",
                     "whiteSpace": "normal",
                     "wordBreak": "break-word",
-                    "paddingTop": "10px"
+                    "paddingTop": "12px"
                 },
-                "tooltipField": "issue_title"
+                "tooltipField": "Purpose",
+                "floatingFilter": true
             },
             {
-                "field": "ISSUE_DESCRIPTION",
-                "headerName": "Issue Description",
+                "field": "Recommended Purpose",
+                "headerName": "Recommended Purpose",
                 "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 350,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "issue_description"
-            },
-            {
-                "field": "ISSUE_TYPE_DISPLAY_VALUE",
-                "headerName": "Issue Type",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 120,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Issue Type"
-            }
-        ]
-    },
-    {
-        "key": "Issue_With_No_GRC_Connections",
-        "reportName": "Issue With No GRC Connections",
-        "filePath": "Sample/CIBC_Aspire_Data/missing_actions_table.csv",
-        "columnDefs": [
-            {
-                "field": "ISSUE_ID",
-                "headerName": "Issue ID",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "checkboxSelection": true,
-                "headerCheckboxSelection": false,
-                "rowDrag": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Issue ID"
-            },
-            {
-                "field": "ISSUE_TITLE",
-                "headerName": "Issue Title",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Issue Title"
-            },
-            {
-                "field": "ISSUE_DESCRIPTION",
-                "headerName": "Issue Description",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 350,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "issue_description"
-            },
-            {
-                "field": "Risks",
-                "headerName": "Risks Recommendation",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Risks Recommendation"
-            },
-            {
-                "field": "Controls",
-                "headerName": "Controls Recommendation",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Controls Recommendation"
-            }
-        ]
-    },
-    {
-        "key": "Issues_Mapped_To_GRC_Objects",
-        "reportName": "Issues Mapped To GRC Objects",
-        "filePath": "Sample/CIBC_Aspire_Data/final_issue_data_file_cibc_Issue_GRC_Rel.csv",
-        "columnDefs": [
-            {
-                "field": "ISSUE_ID",
-                "headerName": "Issue ID",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "checkboxSelection": true,
-                "headerCheckboxSelection": false,
-                "rowDrag": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal"
-                },
-                "tooltipField": "ISSUE_ID"
-            },
-            {
-                "field": "ISSUE_TITLE",
-                "headerName": "Issue Title",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "ISSUE_TITLE"
-            },
-            {
-                "field": "ISSUE_DESCRIPTION",
-                "headerName": "Issue Description",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 350,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "ISSUE_DESCRIPTION"
-            },
-            {
-                "field": "TGT_OBJ_TYPE",
-                "headerName": "GRC Object Type",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "GRC Object Type"
-            },
-            {
-                "field": "TGT_OBJ_ID",
-                "headerName": "GRC Object ID",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "GRC Object ID"
-            },
-            {
-                "field": "OBJECT_NAME",
-                "headerName": "GRC Object Title",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 320,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "GRC Object Title"
-            },
-            {
-                "field": "DESCRIPTION",
-                "headerName": "GRC Object Description",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 350,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "GRC Object Description"
-            }
-        ]
-    },
-    {
-        "key": "Trending_Issues",
-        "reportName": "Trending Issues",
-        "filePath": "Sample/CIBC_Aspire_Data/Trend_charts.csv",
-        "columnDefs": [
-            {
-                "field": "ISSUE_ID",
-                "headerName": "Issue ID",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "checkboxSelection": true,
-                "headerCheckboxSelection": false,
-                "rowDrag": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "issue_id"
-            },
-            {
-                "field": "ISSUE_TITLE",
-                "headerName": "Issue Title",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 320,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "issue_title"
-            },
-            {
-                "field": "ISSUE_DESCRIPTION",
-                "headerName": "Issue Description",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 750,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "issue_description"
-            },
-            {
-                "field": "ISSUE_IDENTIFIED_ON",
-                "headerName": "Issue Identified on",
-                "filter": true,
-                "chartDataType": "series",
+                "chartDataType": "category",
                 "enableRowGroup": true,
                 "enablePivot": true,
                 "enableValue": true,
                 "width": 250,
                 "cellStyle": {
-                    "lineHeight": "1.8",
+                    "lineHeight": "1.9",
                     "whiteSpace": "normal",
                     "wordBreak": "break-word",
-                    "paddingTop": "10px"
+                    "paddingTop": "12px"
                 },
-                "tooltipField": "ISSUE_IDENTIFIED_ON"
+                "tooltipField": "Recommended Purpose",
+                "floatingFilter": true
             }
         ]
     },
     {
-        "key": "Action_Recommendations",
-        "reportName": "Action Recommendations",
-        "filePath": "Sample/CIBC_Aspire_Data/action_plan_recommendations_cibc.csv",
-        "columnDefs": [
-            {
-                "field": "ISSUE_ID",
-                "headerName": "Issue ID",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "checkboxSelection": true,
-                "headerCheckboxSelection": false,
-                "rowDrag": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "issue_id"
-            },
-            {
-                "field": "ISSUE_TITLE",
-                "headerName": "Issue Title",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "issue_title"
-            },
-            {
-                "field": "ISSUE_DESCRIPTION",
-                "headerName": "Issue Description",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 350,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "issue_description"
-            },
-            {
-                "field": "Action ID",
-                "headerName": "Action ID",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Action ID"
-            },
-            {
-                "field": "Action Title",
-                "headerName": "Action Title",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Action Title"
-            },
-            {
-                "field": "Action Description",
-                "headerName": "Action Description",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 350,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Action Description"
-            }
-        ]
-    },
-    {
-        "key": "Control_Recommendations",
-        "reportName": "Control Recommendations",
-        "filePath": "Sample/CIBC_Aspire_Data/clustering_data_recommendations_cibc_only_Control.csv",
-        "columnDefs": [
-            {
-                "field": "issue_id",
-                "headerName": "Issue ID",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "checkboxSelection": true,
-                "headerCheckboxSelection": false,
-                "rowDrag": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "issue_id"
-            },
-            {
-                "field": "issue_name",
-                "headerName": "Issue Title",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "issue_title"
-            },
-            {
-                "field": "issue_description",
-                "headerName": "Issue Description",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 350,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "issue_description"
-            },
-            {
-                "field": "ctrl_id",
-                "headerName": "Control ID",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "GRC Object ID"
-            },
-            {
-                "field": "ctrl_name",
-                "headerName": "Control Name",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Control Name"
-            },
-            {
-                "field": "ctrl_desc",
-                "headerName": "Control Description",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 350,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Control Description"
-            }
-        ]
-    },
-    {
-        "key": "Risk_Recommendations",
-        "reportName": "Risk Recommendations",
-        "filePath": "Sample/CIBC_Aspire_Data/clustering_data_recommendations_cibc_only_Risk.csv",
-        "columnDefs": [
-            {
-                "field": "issue_id",
-                "headerName": "Issue ID",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "checkboxSelection": true,
-                "headerCheckboxSelection": false,
-                "rowDrag": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "issue_id"
-            },
-            {
-                "field": "issue_name",
-                "headerName": "Issue Title",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "issue_title"
-            },
-            {
-                "field": "issue_description",
-                "headerName": "Issue Description",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 350,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "issue_description"
-            },
-            {
-                "field": "cluster_id",
-                "headerName": "Risk ID",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Risk ID"
-            },
-            {
-                "field": "cluster_name",
-                "headerName": "Risk Name",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Risk Name"
-            },
-            {
-                "field": "cluster_description",
-                "headerName": "Risk Description",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 350,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Risk Description"
-            }
-        ]
-    },
-    {
-        "key": "Duplicate_Issues",
-        "reportName": "Duplcate Issues",
-        "filePath": "Sample/CIBC_Aspire_Data/similar_duplicate_data_cibc.csv",
-        "columnDefs": [
-            {
-                "field": "issue_id",
-                "headerName": "Issue ID",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "checkboxSelection": true,
-                "headerCheckboxSelection": false,
-                "rowDrag": true,
-                "width": 120,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "issue_id"
-            },
-            {
-                "field": "issue_title",
-                "headerName": "Issue Title",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "issue_title"
-            },
-            {
-                "field": "issue_description",
-                "headerName": "Issue Description",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 350,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "issue_description"
-            }
-        ]
-    },
-    {
-        "key": "Similar_Issues",
+        "key": "SimilarIssues",
         "reportName": "Similar Issues",
-        "filePath": "Sample/CIBC_Aspire_Data/similar_duplicate_data_cibc.csv",
+        "filePath": "GRC/AISPIRE/quicksight/Ag-Grid/Similar.json",
         "columnDefs": [
             {
-                "field": "issue_id",
-                "headerName": "Issue ID",
+                "field": "Issue Theme",
+                "headerName": "Issue Theme",
                 "filter": true,
-                "chartDataType": "series",
+                "chartDataType": "category",
                 "enableRowGroup": true,
                 "enablePivot": true,
                 "enableValue": true,
                 "checkboxSelection": true,
-                "headerCheckboxSelection": false,
+                "headerCheckboxSelection": true,
                 "rowDrag": true,
-                "width": 120,
+                "width": 350,
+                "cellStyle": {
+                    "lineHeight": "1.9",
+                    "whiteSpace": "normal",
+                    "wordBreak": "break-word",
+                    "paddingTop": "12px"
+                },
+                "tooltipField": "Issue Theme",
+                "floatingFilter": true
+            },
+            {
+                "field": "Primary Issue ID",
+                "headerName": "Primary Issue ID",
+                "chartDataType": "category",
+                "enableRowGroup": true,
+                "hide": true,
+                "enablePivot": true,
+                "enableValue": true,
+                "width": 190,
                 "cellStyle": {
                     "lineHeight": "1.8",
                     "whiteSpace": "normal",
                     "wordBreak": "break-word",
                     "paddingTop": "10px"
                 },
-                "tooltipField": "issue_id"
+                "tooltipField": "Primary Issue ID",
+                "floatingFilter": true,
+                "filter": true
             },
             {
-                "field": "issue_title",
+                "field": "Issue ID",
+                "headerName": "Issue ID",
+                "filter": true,
+                "chartDataType": "category",
+                "enableRowGroup": true,
+                "enablePivot": true,
+                "enableValue": true,
+                "width": 240,
+                "cellStyle": {
+                    "lineHeight": "1.8",
+                    "whiteSpace": "normal",
+                    "wordBreak": "break-word",
+                    "paddingTop": "10px"
+                },
+                "tooltipField": "Issue ID",
+                "floatingFilter": true
+            },
+            {
+                "field": "Issue Title",
                 "headerName": "Issue Title",
                 "filter": true,
-                "chartDataType": "series",
+                "chartDataType": "category",
                 "enableRowGroup": true,
                 "enablePivot": true,
                 "enableValue": true,
@@ -987,43 +299,53 @@
                     "wordBreak": "break-word",
                     "paddingTop": "10px"
                 },
-                "tooltipField": "issue_title"
+                "tooltipField": "Issue Title",
+                "floatingFilter": true
             },
             {
-                "field": "issue_description",
+                "field": "Issue Description",
                 "headerName": "Issue Description",
                 "filter": true,
-                "chartDataType": "series",
+                "chartDataType": "category",
                 "enableRowGroup": true,
                 "enablePivot": true,
                 "enableValue": true,
                 "width": 350,
                 "cellStyle": {
+                    "lineHeight": "1.9",
+                    "whiteSpace": "normal",
+                    "wordBreak": "break-word",
+                    "paddingTop": "12px"
+                },
+                "tooltipField": "Issue Description",
+                "floatingFilter": true
+            },
+            {
+                "field": "Redundancy",
+                "headerName": "Redundancy",
+                "filter": true,
+                "chartDataType": "category",
+                "enableRowGroup": true,
+                "enablePivot": true,
+                "enableValue": true,
+                "width": 170,
+                "cellStyle": {
                     "lineHeight": "1.8",
                     "whiteSpace": "normal",
                     "wordBreak": "break-word",
                     "paddingTop": "10px"
                 },
-                "tooltipField": "issue_description"
-            }
-        ]
-    },
-    {
-        "key": "Issues_associated_with_the_Theme",
-        "reportName": "Issues associated with the Theme",
-        "filePath": "Sample/CIBC_Aspire_Data/clustering_data_recommendations_cibc_only_Issue.csv",
-        "columnDefs": [
+                "tooltipField": "Redundancy",
+                "floatingFilter": true
+            },
             {
-                "field": "issue_id",
-                "headerName": "Issue ID",
+                "field": "Score",
+                "headerName": "Score",
                 "filter": true,
-                "chartDataType": "series",
+                "chartDataType": "Series",
                 "enableRowGroup": true,
                 "enablePivot": true,
                 "enableValue": true,
-                "checkboxSelection": true,
-                "headerCheckboxSelection": false,
-                "rowDrag": true,
                 "width": 120,
                 "cellStyle": {
                     "lineHeight": "1.8",
@@ -1031,13 +353,62 @@
                     "wordBreak": "break-word",
                     "paddingTop": "10px"
                 },
-                "tooltipField": "issue_id"
+                "tooltipField": "Score",
+                "floatingFilter": true
+            }
+        ]
+    },
+    {
+        "key": "DuplicateIssues",
+        "reportName": "Duplicate Issues",
+        "filePath": "GRC/AISPIRE/quicksight/Ag-Grid/Duplicate.json",
+        "columnDefs": [
+            {
+                "field": "Issue Theme",
+                "headerName": "Issue Theme",
+                "filter": true,
+                "chartDataType": "category",
+                "enableRowGroup": true,
+                "enablePivot": true,
+                "enableValue": true,
+                "checkboxSelection": true,
+                "headerCheckboxSelection": true,
+                "rowDrag": true,
+                "minWidth": 300,
+                "width": 300,
+                "cellStyle": {
+                    "lineHeight": "1.9",
+                    "whiteSpace": "normal",
+                    "wordBreak": "break-word",
+                    "paddingTop": "12px"
+                },
+                "tooltipField": "Issue Theme",
+                "floatingFilter": true
             },
             {
-                "field": "issue_name",
-                "headerName": "Issue Title",
+                "field": "Primary Issue ID",
+                "headerName": "Primary Issue ID",
+                "chartDataType": "category",
+                "hide": true,
+                "enableRowGroup": true,
+                "enablePivot": true,
+                "enableValue": true,
+                "width": 210,
+                "cellStyle": {
+                    "lineHeight": "1.8",
+                    "whiteSpace": "normal",
+                    "wordBreak": "break-word",
+                    "paddingTop": "10px"
+                },
+                "tooltipField": "Primary Issue ID",
+                "floatingFilter": true,
+                "filter": true
+            },
+            {
+                "field": "Issue ID",
+                "headerName": "Issue ID",
                 "filter": true,
-                "chartDataType": "series",
+                "chartDataType": "category",
                 "enableRowGroup": true,
                 "enablePivot": true,
                 "enableValue": true,
@@ -1048,43 +419,72 @@
                     "wordBreak": "break-word",
                     "paddingTop": "10px"
                 },
-                "tooltipField": "issue_title"
+                "tooltipField": "Issue ID",
+                "floatingFilter": true
             },
             {
-                "field": "issue_description",
+                "field": "Issue Title",
+                "headerName": "Issue Title",
+                "filter": true,
+                "chartDataType": "category",
+                "enableRowGroup": true,
+                "enablePivot": true,
+                "enableValue": true,
+                "minWidth": 280,
+                "width": 280,
+                "cellStyle": {
+                    "lineHeight": "1.8",
+                    "whiteSpace": "normal",
+                    "wordBreak": "break-word",
+                    "paddingTop": "10px"
+                },
+                "tooltipField": "Issue Title",
+                "floatingFilter": true
+            },
+            {
+                "field": "Issue Description",
                 "headerName": "Issue Description",
                 "filter": true,
-                "chartDataType": "series",
+                "chartDataType": "category",
                 "enableRowGroup": true,
                 "enablePivot": true,
                 "enableValue": true,
                 "width": 350,
                 "cellStyle": {
+                    "lineHeight": "1.9",
+                    "whiteSpace": "normal",
+                    "wordBreak": "break-word",
+                    "paddingTop": "12px"
+                },
+                "tooltipField": "Issue Description",
+                "floatingFilter": true
+            },
+            {
+                "field": "Redundancy",
+                "headerName": "Redundancy",
+                "filter": true,
+                "chartDataType": "category",
+                "enableRowGroup": true,
+                "enablePivot": true,
+                "enableValue": true,
+                "width": 170,
+                "cellStyle": {
                     "lineHeight": "1.8",
                     "whiteSpace": "normal",
                     "wordBreak": "break-word",
                     "paddingTop": "10px"
                 },
-                "tooltipField": "issue_description"
-            }
-        ]
-    },
-    {
-        "key": "Controls_with_Issues",
-        "reportName": "Control With Issues",
-        "filePath": "Sample/CIBC_Aspire_Data/Controls_with_Issues.csv",
-        "columnDefs": [
+                "tooltipField": "Redundancy",
+                "floatingFilter": true
+            },
             {
-                "field": "OBJECT_ID",
-                "headerName": "Control ID",
+                "field": "Score",
+                "headerName": "Score",
                 "filter": true,
                 "chartDataType": "series",
                 "enableRowGroup": true,
                 "enablePivot": true,
                 "enableValue": true,
-                "checkboxSelection": true,
-                "headerCheckboxSelection": false,
-                "rowDrag": true,
                 "width": 120,
                 "cellStyle": {
                     "lineHeight": "1.8",
@@ -1092,636 +492,410 @@
                     "wordBreak": "break-word",
                     "paddingTop": "10px"
                 },
-                "tooltipField": "Control ID"
-            },
+                "tooltipField": "Score",
+                "floatingFilter": true
+            }
+        ]
+    },
+    {
+        "key": "IssueswithTheme",
+        "reportName": "Issues Associated with Theme",
+        "filePath": "GRC/AISPIRE/quicksight/Ag-Grid/Issue_with_theme.json",
+        "columnDefs": [
             {
-                "field": "CTRL_NAME",
-                "headerName": "Contrl Name",
+                "field": "Issue Theme",
+                "headerName": "Issue Theme",
                 "filter": true,
-                "chartDataType": "series",
+                "chartDataType": "category",
+                "checkboxSelection": true,
+                "headerCheckboxSelection": true,
+                "rowDrag": true,
                 "enableRowGroup": true,
                 "enablePivot": true,
                 "enableValue": true,
-                "width": 220,
+                "minWidth": 270,
+                "width": 270,
                 "cellStyle": {
-                    "lineHeight": "1.8",
+                    "lineHeight": "1.9",
                     "whiteSpace": "normal",
                     "wordBreak": "break-word",
-                    "paddingTop": "10px"
+                    "paddingTop": "12px"
                 },
-                "tooltipField": "Control Name"
+                "tooltipField": "Issue Theme",
+                "floatingFilter": true
             },
             {
-                "field": "PUBLISHED_DATE",
-                "headerName": "Publish Date",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 100,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Publish Date"
-            },
-            {
-                "field": "TEST_RESULT",
-                "headerName": "Test Result",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 100,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Test Result"
-            },
-            {
-                "field": "ISSUE_ID",
+                "field": "Issue ID",
                 "headerName": "Issue ID",
                 "filter": true,
-                "chartDataType": "series",
+                "chartDataType": "category",
                 "enableRowGroup": true,
                 "enablePivot": true,
                 "enableValue": true,
-                "width": 130,
+                "minWidth": 210,
+                "width": 210,
                 "cellStyle": {
                     "lineHeight": "1.8",
                     "whiteSpace": "normal",
                     "wordBreak": "break-word",
                     "paddingTop": "10px"
                 },
-                "tooltipField": "Issue ID"
+                "tooltipField": "Issue ID",
+                "floatingFilter": true
             },
             {
-                "field": "ISSUE_IDENTIFIED_ON",
-                "headerName": "Issue Identified Date",
+                "field": "Issue Title",
+                "headerName": "Issue Title",
                 "filter": true,
-                "chartDataType": "series",
+                "chartDataType": "category",
                 "enableRowGroup": true,
                 "enablePivot": true,
                 "enableValue": true,
-                "width": 100,
+                "minWidth": 260,
+                "width": 260,
                 "cellStyle": {
-                    "lineHeight": "1.8",
+                    "lineHeight": "1.9",
                     "whiteSpace": "normal",
                     "wordBreak": "break-word",
-                    "paddingTop": "10px"
+                    "paddingTop": "12px"
                 },
-                "tooltipField": "Issue ID"
+                "tooltipField": "Issue Title",
+                "floatingFilter": true
             },
             {
-                "field": "THEME_SEN",
-                "headerName": "Theme",
+                "field": "Issue Description",
+                "headerName": "Issue Description",
                 "filter": true,
-                "chartDataType": "series",
+                "chartDataType": "category",
                 "enableRowGroup": true,
                 "enablePivot": true,
                 "enableValue": true,
-                "width": 150,
+                "minWidth": 290,
+                "width": 290,
                 "cellStyle": {
-                    "lineHeight": "1.8",
+                    "lineHeight": "1.9",
                     "whiteSpace": "normal",
                     "wordBreak": "break-word",
-                    "paddingTop": "10px"
+                    "paddingTop": "12px"
                 },
-                "tooltipField": "Theme"
-            }
-        ]
-    },
-    {
-        "key": "Failed_Controls",
-        "reportName": "Failed Controls",
-        "filePath": "Sample/CIBC_Aspire_Data/Failed_Controls.csv",
-        "columnDefs": [
-            {
-                "field": "OBJECT_ID",
-                "headerName": "Control ID",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "checkboxSelection": true,
-                "headerCheckboxSelection": false,
-                "rowDrag": true,
-                "width": 120,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Control ID"
+                "tooltipField": "Issue Description",
+                "floatingFilter": true
             },
             {
-                "field": "CTRL_NAME",
-                "headerName": "Contrl Name",
+                "field": "X Coordinate",
+                "headerName": "X Coordinate",
                 "filter": true,
                 "chartDataType": "series",
                 "enableRowGroup": true,
                 "enablePivot": true,
                 "enableValue": true,
-                "width": 220,
+                "minWidth": 210,
+                "width": 210,
                 "cellStyle": {
                     "lineHeight": "1.8",
                     "whiteSpace": "normal",
                     "wordBreak": "break-word",
                     "paddingTop": "10px"
                 },
-                "tooltipField": "Control Name"
+                "tooltipField": "X Coordinate",
+                "floatingFilter": true
             },
             {
-                "field": "PUBLISHED_DATE",
-                "headerName": "Publish Date",
+                "field": "Y Coordinate",
+                "headerName": "Y Coordinate",
                 "filter": true,
                 "chartDataType": "series",
                 "enableRowGroup": true,
                 "enablePivot": true,
                 "enableValue": true,
-                "width": 100,
+                "minWidth": 210,
+                "width": 210,
                 "cellStyle": {
                     "lineHeight": "1.8",
                     "whiteSpace": "normal",
                     "wordBreak": "break-word",
                     "paddingTop": "10px"
                 },
-                "tooltipField": "Publish Date"
+                "tooltipField": "Y Coordinate",
+                "floatingFilter": true
             },
             {
-                "field": "TEST_RESULT",
-                "headerName": "Test Result",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 100,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Test Result"
-            },
-            {
-                "field": "THEME_SEN",
-                "headerName": "Theme",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 150,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Theme"
-            }
-        ]
-    },
-    {
-        "key": "Control_Testing",
-        "reportName": "Control Testing",
-        "filePath": "Sample/CIBC_Aspire_Data/Control_Testing.csv",
-        "columnDefs": [
-            {
-                "field": "OBJECT_ID",
-                "headerName": "Control ID",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "checkboxSelection": true,
-                "headerCheckboxSelection": false,
-                "rowDrag": true,
-                "width": 120,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Control ID"
-            },
-            {
-                "field": "CTRL_NAME",
-                "headerName": "Contrl Name",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Control Name"
-            },
-            {
-                "field": "PUBLISHED_DATE",
-                "headerName": "Publish Date",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 100,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Publish Date"
-            },
-            {
-                "field": "TEST_RESULT",
-                "headerName": "Test Result",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 100,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Test Result"
-            },
-            {
-                "field": "THEME_SEN",
-                "headerName": "Theme",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 150,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Theme"
-            }
-        ]
-    },
-    {
-        "key": "Control_Details",
-        "reportName": "Control Details",
-        "filePath": "Sample/CIBC_Aspire_Data/Control_Details.csv",
-        "columnDefs": [
-            {
-                "field": "OBJECT_ID",
-                "headerName": "Control ID",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "checkboxSelection": true,
-                "headerCheckboxSelection": false,
-                "rowDrag": true,
-                "width": 120,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Control ID"
-            },
-            {
-                "field": "CTRL_NAME",
-                "headerName": "Contrl Name",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Control Name"
-            },
-            {
-                "field": "PUBLISHED_DATE",
-                "headerName": "Publish Date",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 100,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Publish Date"
-            },
-            {
-                "field": "ISSUE_ID",
-                "headerName": "Issue ID",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 130,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Issue ID"
-            },
-            {
-                "field": "ISSUE_IDENTIFIED_ON",
-                "headerName": "Issue Identified Date",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 100,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Issue ID"
-            }
-        ]
-    },
-    {
-        "key": "Control_Testing_Details",
-        "reportName": "Control Testing Details",
-        "filePath": "Sample/CIBC_Aspire_Data/Control_Testing_Details.csv",
-        "columnDefs": [
-            {
-                "field": "OBJECT_ID",
-                "headerName": "Control ID",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "checkboxSelection": true,
-                "headerCheckboxSelection": false,
-                "rowDrag": true,
-                "width": 120,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Control ID"
-            },
-            {
-                "field": "CTRL_NAME",
-                "headerName": "Contrl Name",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Control Name"
-            },
-            {
-                "field": "CTRL_DESC",
-                "headerName": "Control Description",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 300,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Control Description"
-            },
-            {
-                "field": "PURPOSE",
-                "headerName": "Purpose",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 130,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Purpose"
-            },
-            {
-                "field": "RECOMMENDED_PURPOSE",
-                "headerName": "Recommended Purpose",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 130,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Recommended Purpose"
-            },
-            {
-                "field": "PD_REC_DESC",
-                "headerName": "Recommendation",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 130,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Recommendation"
-            }
-        ]
-    },
-    {
-        "key": "Control_Redundant_Similar",
-        "reportName": "Control Details",
-        "filePath": "Sample/CIBC_Aspire_Data/Control_Redundant_Similar.csv",
-        "columnDefs": [
-            {
-                "field": "OBJECT_ID",
-                "headerName": "Control ID",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "checkboxSelection": true,
-                "headerCheckboxSelection": false,
-                "rowDrag": true,
-                "width": 120,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Control ID"
-            },
-            {
-                "field": "CTRL_NAME",
-                "headerName": "Contrl Name",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 220,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Control Name"
-            },
-            {
-                "field": "CTRL_DESC",
-                "headerName": "Control Description",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 300,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Control Description"
-            },
-            {
-                "field": "TESTED_ORGANIZATION",
-                "headerName": "Tested LOB",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 130,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Tested LOB"
-            },
-            {
-                "field": "REDUNDANCY",
-                "headerName": "Redundancey",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 100,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Redundancey"
-            },
-            {
-                "field": "ORG",
-                "headerName": "Org Relation",
-                "filter": true,
-                "chartDataType": "series",
-                "enableRowGroup": true,
-                "enablePivot": true,
-                "enableValue": true,
-                "width": 100,
-                "cellStyle": {
-                    "lineHeight": "1.8",
-                    "whiteSpace": "normal",
-                    "wordBreak": "break-word",
-                    "paddingTop": "10px"
-                },
-                "tooltipField": "Org Relation"
-            },
-            {
-                "field": "LEVEL",
+                "field": "Level",
                 "headerName": "Level",
                 "filter": true,
-                "chartDataType": "series",
+                "chartDataType": "category",
                 "enableRowGroup": true,
                 "enablePivot": true,
                 "enableValue": true,
-                "width": 100,
+                "minWidth": 200,
+                "width": 200,
                 "cellStyle": {
                     "lineHeight": "1.8",
                     "whiteSpace": "normal",
                     "wordBreak": "break-word",
                     "paddingTop": "10px"
                 },
-                "tooltipField": "Level"
+                "tooltipField": "Level",
+                "floatingFilter": true
+            },
+            {
+                "field": "Issue Identified On",
+                "headerName": "Issue Identified On",
+                "filter": true,
+                "chartDataType": "category",
+                "enableRowGroup": true,
+                "enablePivot": true,
+                "enableValue": true,
+                "minWidth": 260,
+                "width": 260,
+                "cellStyle": {
+                    "lineHeight": "1.8",
+                    "whiteSpace": "normal",
+                    "wordBreak": "break-word",
+                    "paddingTop": "10px"
+                },
+                "tooltipField": "Issue Identified On",
+                "floatingFilter": true
+            },
+            {
+                "field": "Issue Closed On",
+                "headerName": "Issue Closed On",
+                "filter": true,
+                "chartDataType": "category",
+                "enableRowGroup": true,
+                "enablePivot": true,
+                "enableValue": true,
+                "minWidth": 240,
+                "width": 264,
+                "cellStyle": {
+                    "lineHeight": "1.8",
+                    "whiteSpace": "normal",
+                    "wordBreak": "break-word",
+                    "paddingTop": "10px"
+                },
+                "tooltipField": "Issue Closed On",
+                "floatingFilter": true
+            },
+            {
+                "field": "Issue Status",
+                "headerName": "Issue Status",
+                "filter": true,
+                "chartDataType": "category",
+                "enableRowGroup": true,
+                "enablePivot": true,
+                "enableValue": true,
+                "minWidth": 200,
+                "width": 200,
+                "cellStyle": {
+                    "lineHeight": "1.8",
+                    "whiteSpace": "normal",
+                    "wordBreak": "break-word",
+                    "paddingTop": "10px"
+                },
+                "tooltipField": "Issue Status",
+                "floatingFilter": true
+            }
+        ]
+    },
+    {
+        "key": "GRCRecommendations",
+        "reportName": "ISSUE GRC Recommendations",
+        "filePath": "GRC/AISPIRE/quicksight/Ag-Grid/Issue_Grc_Recommendations.json",
+        "columnDefs": [
+            {
+                "field": "Issue Theme",
+                "headerName": "Issue Theme",
+                "filter": true,
+                "chartDataType": "category",
+                "checkboxSelection": true,
+                "headerCheckboxSelection": true,
+                "rowDrag": true,
+                "enableRowGroup": true,
+                "enablePivot": true,
+                "enableValue": true,
+                "minWidth": 300,
+                "width": 300,
+                "cellStyle": {
+                    "lineHeight": "1.9",
+                    "whiteSpace": "normal",
+                    "wordBreak": "break-word",
+                    "paddingTop": "12px"
+                },
+                "tooltipField": "Issue Theme",
+                "floatingFilter": true
+            },
+            {
+                "field": "Issue ID",
+                "headerName": "Issue ID",
+                "filter": true,
+                "chartDataType": "category",
+                "enableRowGroup": true,
+                "enablePivot": true,
+                "enableValue": true,
+                "minWidth": 210,
+                "width": 210,
+                "cellStyle": {
+                    "lineHeight": "1.8",
+                    "whiteSpace": "normal",
+                    "wordBreak": "break-word",
+                    "paddingTop": "10px"
+                },
+                "tooltipField": "Issue ID",
+                "floatingFilter": true
+            },
+            {
+                "field": "Issue Title",
+                "headerName": "Issue Title",
+                "filter": true,
+                "chartDataType": "category",
+                "enableRowGroup": true,
+                "enablePivot": true,
+                "enableValue": true,
+                "minWidth": 240,
+                "width": 240,
+                "cellStyle": {
+                    "lineHeight": "1.8",
+                    "whiteSpace": "normal",
+                    "wordBreak": "break-word",
+                    "paddingTop": "10px"
+                },
+                "tooltipField": "Issue Title",
+                "floatingFilter": true
+            },
+            {
+                "field": "Issue Description",
+                "headerName": "Issue Description",
+                "filter": true,
+                "chartDataType": "category",
+                "enableRowGroup": true,
+                "enablePivot": true,
+                "enableValue": true,
+                "minWidth": 290,
+                "width": 290,
+                "cellStyle": {
+                    "lineHeight": "1.8",
+                    "whiteSpace": "normal",
+                    "wordBreak": "break-word",
+                    "paddingTop": "10px"
+                },
+                "tooltipField": "Issue Description",
+                "floatingFilter": true
+            },
+            {
+                "field": "Object ID",
+                "headerName": "Object ID",
+                "filter": true,
+                "chartDataType": "category",
+                "enableRowGroup": true,
+                "enablePivot": true,
+                "enableValue": true,
+                "minWidth": 170,
+                "width": 170,
+                "cellStyle": {
+                    "lineHeight": "1.8",
+                    "whiteSpace": "normal",
+                    "wordBreak": "break-word",
+                    "paddingTop": "10px"
+                },
+                "tooltipField": "Object ID",
+                "floatingFilter": true
+            },
+            {
+                "field": "Object Name",
+                "headerName": "Object Name",
+                "filter": true,
+                "chartDataType": "category",
+                "enableRowGroup": true,
+                "enablePivot": true,
+                "enableValue": true,
+                "minWidth": 240,
+                "width": 240,
+                "cellStyle": {
+                    "lineHeight": "1.8",
+                    "whiteSpace": "normal",
+                    "wordBreak": "break-word",
+                    "paddingTop": "10px"
+                },
+                "tooltipField": "Object Name",
+                "floatingFilter": true
+            },
+            {
+                "field": "Object Description",
+                "headerName": "Object Description",
+                "filter": true,
+                "chartDataType": "category",
+                "enableRowGroup": true,
+                "enablePivot": true,
+                "enableValue": true,
+                "minWidth": 290,
+                "width": 290,
+                "cellStyle": {
+                    "lineHeight": "1.8",
+                    "whiteSpace": "normal",
+                    "wordBreak": "break-word",
+                    "paddingTop": "10px"
+                },
+                "tooltipField": "Object Description",
+                "floatingFilter": true
+            },
+            {
+                "field": "Level",
+                "headerName": "Level",
+                "filter": true,
+                "chartDataType": "category",
+                "enableRowGroup": true,
+                "enablePivot": true,
+                "enableValue": true,
+                "minWidth": 200,
+                "width": 200,
+                "cellStyle": {
+                    "lineHeight": "1.8",
+                    "whiteSpace": "normal",
+                    "wordBreak": "break-word",
+                    "paddingTop": "10px"
+                },
+                "tooltipField": "Level",
+                "floatingFilter": true
+            },
+            {
+                "field": "Object Type",
+                "headerName": "Object Type",
+                "filter": true,
+                "chartDataType": "category",
+                "enableRowGroup": true,
+                "enablePivot": true,
+                "enableValue": true,
+                "minWidth": 200,
+                "width": 200,
+                "cellStyle": {
+                    "lineHeight": "1.8",
+                    "whiteSpace": "normal",
+                    "wordBreak": "break-word",
+                    "paddingTop": "10px"
+                },
+                "tooltipField": "Object Type",
+                "floatingFilter": true
+            },
+            {
+                "field": "Score",
+                "headerName": "Score",
+                "filter": true,
+                "chartDataType": "series",
+                "enableRowGroup": true,
+                "enablePivot": true,
+                "enableValue": true,
+                "minWidth": 120,
+                "width": 120,
+                "cellStyle": {
+                    "lineHeight": "1.8",
+                    "whiteSpace": "normal",
+                    "wordBreak": "break-word",
+                    "paddingTop": "10px"
+                },
+                "tooltipField": "Score",
+                "floatingFilter": true
             }
         ]
     }
+
 ]
