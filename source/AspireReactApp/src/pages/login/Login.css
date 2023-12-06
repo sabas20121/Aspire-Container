@@ -3,8 +3,8 @@
   flex-direction: row;
   height: 100vh;
   width: 100vw;
-  min-width: 1200px;
-  min-height: 625px;
+  /* min-width: 1200px;
+  min-height: 625px; */
   overflow: hidden;
 }
 
@@ -75,9 +75,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 5%;
+  margin-top:5%;
   width: 50%;
-  height: 100%;
-  padding-top: 88px;
+  height: 80%;
 }
 
 .logo-div {
@@ -163,7 +164,7 @@
 }
 .login-button-div-sso {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .sso-button {
