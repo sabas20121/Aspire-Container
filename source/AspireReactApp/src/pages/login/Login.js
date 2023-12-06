@@ -290,7 +290,7 @@ export default function Login() {
         <img src={laptop} alt="laptop" />
       </div>
       <div className="right-section">
-        <div className="right-content">
+        {/*<div className="right-content">*/}
           <div className="logo-div">
             <img src={aispire} alt="logo" width="242" height="78" />
           </div>
@@ -370,7 +370,7 @@ export default function Login() {
               </Button>
             </div>
           )}
-        </div>
+        {/* </div> */}
       </div>
     </div>
   );
