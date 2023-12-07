@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cec8fa52-e7fd-4273-ba35-a8bd49b506bc" name="Changes" comment="Updated ReportMetaData">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/5/65e4eec23a41125fb3fa56ea7a7bfbcb4549166f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/5/65e4eec23a41125fb3fa56ea7a7bfbcb4549166f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/3/e39c8b955bd1d83c92cac60994682e04b6f1df03" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/3/e39c8b955bd1d83c92cac60994682e04b6f1df03" afterDir="false" />
+    <list default="true" id="cec8fa52-e7fd-4273-ba35-a8bd49b506bc" name="Changes" comment="Updated Login Ui">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/pages/login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/pages/login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/GetIdTokenRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/GetIdTokenRouter.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,13 +68,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697615716371</updated>
-    </task>
-    <task id="LOCAL-00019" summary="redo">
-      <created>1697764829080</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1697764829080</updated>
     </task>
     <task id="LOCAL-00020" summary="redo">
       <created>1697765094337</created>
@@ -414,7 +405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701774769409</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Updated Login Ui">
+      <created>1701872512232</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1701872512233</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -450,6 +448,7 @@
     <MESSAGE value="Redo" />
     <MESSAGE value="Custom Login &amp; QS Registration Implementation." />
     <MESSAGE value="Updated ReportMetaData" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated ReportMetaData" />
+    <MESSAGE value="Updated Login Ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Login Ui" />
   </component>
 </project>
