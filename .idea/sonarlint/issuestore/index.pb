@@ -61,3 +61,5 @@ S
 #src/routes/GetDashboardURLRouter.js,9\1\914de9784d03971bc5125ce60fef3ed374a5076f
 L
 src/conf/ReportMetaData.json,8\d\8ddb79ed25577ddeaf2bce5eade37210cb75c07d
+R
+"source/AspireReactApp/src/index.js,0\4\04e1785c0a4891db5761ea0ac0bb6f5605eed9d4
