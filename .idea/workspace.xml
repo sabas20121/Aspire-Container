@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cec8fa52-e7fd-4273-ba35-a8bd49b506bc" name="Changes" comment="Ag-Grid Licence">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/pages/home/LeftPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/pages/home/LeftPanel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/pages/home/Menu.json" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/pages/home/Menu.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conf/ReportMetaData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/conf/ReportMetaData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/S3Service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/S3Service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/S3Client.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/S3Client.js" afterDir="false" />
+    <list default="true" id="cec8fa52-e7fd-4273-ba35-a8bd49b506bc" name="Changes" comment="Report MetaData &amp; left Panel changes">
+      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/pages/reports/GridReport.js" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/pages/reports/GridReport.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,13 +67,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697615716371</updated>
-    </task>
-    <task id="LOCAL-00022" summary="redo">
-      <created>1697768510717</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1697768510717</updated>
     </task>
     <task id="LOCAL-00023" summary="redo">
       <created>1697768849030</created>
@@ -418,7 +404,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701949880788</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Report MetaData &amp; left Panel changes">
+      <created>1702290842231</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1702290842231</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -456,6 +449,7 @@
     <MESSAGE value="Updated ReportMetaData" />
     <MESSAGE value="Updated Login Ui" />
     <MESSAGE value="Ag-Grid Licence" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ag-Grid Licence" />
+    <MESSAGE value="Report MetaData &amp; left Panel changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Report MetaData &amp; left Panel changes" />
   </component>
 </project>

@@ -342,7 +342,7 @@ function GridReport({ reportKey, columnFilters }) {
               rowData={rowData}
               columnDefs={columnDetails}
               defaultColDef={defaultColDef}
-              pagination={true}
+              pagination={false}
               paginationPageSize={100}
               rowSelection={'multiple'}
               rowMultiSelectWithClick={true}
