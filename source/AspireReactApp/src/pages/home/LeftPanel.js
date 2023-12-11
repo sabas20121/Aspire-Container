@@ -187,7 +187,7 @@ const List = (props) => {
                       {location.pathname === option.path ||
                         (location.pathname === '/' &&
                           option.path &&
-                          option.path === options[1].path)
+                          option.path === options[0].path)
                         ? getIcon(option.key, true)
                         : getIcon(option.key, false)}
                     </ListItemIcon>

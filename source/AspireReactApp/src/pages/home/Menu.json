@@ -5,12 +5,5 @@
         "tooltip": "You can choose from the available dashboard options",
         "path": "/dashboard",
         "icon": "dashboard"
-    },
-    {
-        "key": "graph",
-        "title": "GRC Knowledge Graph",
-        "tooltip": "Access Knowledge Graph",
-        "path": "/graph",
-        "icon": "graph"
     }
 ]

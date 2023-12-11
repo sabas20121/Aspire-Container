@@ -1,11 +1,9 @@
-const { S3Client } = require("@aws-sdk/client-s3");
+const AWS = require('aws-sdk');
 
 class AWSS3Client {
     constructor(region) {
-        const awsConfig = {
-            region: region,
-        };
-        this.s3Client = new S3Client(awsConfig);
+        AWS.config.update({ region: region });
+        this.s3Client = new AWS.S3();
     }
 
     get client() {
@@ -14,4 +12,3 @@ class AWSS3Client {
 }
 
 module.exports = AWSS3Client;
-

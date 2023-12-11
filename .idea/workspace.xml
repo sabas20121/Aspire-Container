@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cec8fa52-e7fd-4273-ba35-a8bd49b506bc" name="Changes" comment="Updated Login Ui">
+    <list default="true" id="cec8fa52-e7fd-4273-ba35-a8bd49b506bc" name="Changes" comment="Ag-Grid Licence">
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/pages/home/LeftPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/pages/home/LeftPanel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/pages/home/Menu.json" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/pages/home/Menu.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conf/ReportMetaData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/conf/ReportMetaData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/S3Service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/S3Service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/S3Client.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/S3Client.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,13 +74,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697615716371</updated>
-    </task>
-    <task id="LOCAL-00021" summary="redo">
-      <created>1697767652542</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1697767652542</updated>
     </task>
     <task id="LOCAL-00022" summary="redo">
       <created>1697768510717</created>
@@ -414,7 +411,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701933062425</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Ag-Grid Licence">
+      <created>1701949880788</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1701949880788</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -451,6 +455,7 @@
     <MESSAGE value="Custom Login &amp; QS Registration Implementation." />
     <MESSAGE value="Updated ReportMetaData" />
     <MESSAGE value="Updated Login Ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Login Ui" />
+    <MESSAGE value="Ag-Grid Licence" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ag-Grid Licence" />
   </component>
 </project>
