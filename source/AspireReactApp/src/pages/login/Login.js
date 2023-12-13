@@ -29,7 +29,7 @@ import {
 import msaispirelogin from '../../assets/metricstream-aispire-login.svg';
 import aispire from '../../assets/aispire-login.svg';
 import laptop from '../../assets/laptop.png';
-import SELogo from '../../assets/Siemens_Energy_logo.png';
+import SELogo from '../../assets/Siemens_Energy_logo.svg';
 
 export default function Login() {
 	const [formData, setFormData] = useState({

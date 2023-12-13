@@ -79,3 +79,7 @@ W
 'source/AspireReactApp/src/assets/m-logo,4\f\4f28159d5f018bc8cb49de3ac93ae2077f5b22ef
 [
 +source/AspireReactApp/src/assets/m-logo.svg,8\d\8d5492d558b07c1030320f4d9dd1131db693b7d4
+h
+8source/AspireReactApp/src/assets/Siemens_Energy_logo.svg,0\f\0f9371ea5e165e4f53b199fbd4e90eef614de4b2
+W
+'source/AspireReactApp/src/assets/ms.svg,0\d\0d5d5b5442aac75bb9ee8ee87c3dc31560438487
