@@ -366,9 +366,9 @@ const showConfigPanel = (setting, open) => {
 }
 
 export default function LeftPanel() {
-  const [open, setOpen] = useState(true) /** Open/close left panel */
+  const [open, setOpen] = useState(false)
   const [panel, setPanel] =
-    useState(false) /** Show/hide ConfigMenu sub panels */
+    useState(false)
 
   let panelRef = useRef()
 

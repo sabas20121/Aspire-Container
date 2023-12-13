@@ -298,7 +298,7 @@ export default function Login() {
   				<img src={msaispirelogin} alt="logo" width="242" height="78" />
   			</div>
   			<div className="logo-div-prod">
-  				<img src={SELogo} alt="logo" width="242" height="78" />
+  				<img src={SELogo} alt="logo" width="155" />
   			</div>
   		</div>
           <form onSubmit={handleSubmit}>

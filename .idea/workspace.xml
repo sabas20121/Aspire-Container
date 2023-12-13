@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cec8fa52-e7fd-4273-ba35-a8bd49b506bc" name="Changes" comment="Report MetaData &amp; left Panel changes">
-      <change afterPath="$PROJECT_DIR$/source/AspireReactApp/src/assets/m-logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/AspireReactApp/src/assets/metricstream-aispire-login.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/5/65e4eec23a41125fb3fa56ea7a7bfbcb4549166f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/5/65e4eec23a41125fb3fa56ea7a7bfbcb4549166f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/3/e39c8b955bd1d83c92cac60994682e04b6f1df03" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/3/e39c8b955bd1d83c92cac60994682e04b6f1df03" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+    <list default="true" id="cec8fa52-e7fd-4273-ba35-a8bd49b506bc" name="Changes" comment="Ui Changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/pages/home/LeftPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/pages/home/LeftPanel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/pages/login/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/pages/login/Login.css" afterDir="false" />
@@ -48,24 +42,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projects/GIT/PSNL/a2&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "last_opened_file_path": "D:/Projects/GIT/PSNL/v2/source/AspireReactApp/src/assets",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\GIT\PSNL\v2\source\AspireReactApp\src\assets" />
       <recent name="D:\Projects\GIT\PSNL\Aspire-Container\src\conf" />
       <recent name="D:\Projects\GIT\PSNL\Aspire-Container\src\utils" />
       <recent name="D:\Projects\GIT\PSNL\Aspire-Container\src\routes" />
       <recent name="D:\Projects\GIT\PSNL\Aspire-Container\src\controllers" />
-      <recent name="D:\Projects\GIT\PSNL\Aspire-Container" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -76,13 +70,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697615716371</updated>
-    </task>
-    <task id="LOCAL-00024" summary="redo">
-      <created>1697771734323</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1697771734323</updated>
     </task>
     <task id="LOCAL-00025" summary="redo">
       <created>1697772272436</created>
@@ -420,7 +407,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702290925309</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Ui Changes">
+      <created>1702452232234</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1702452232234</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -459,6 +453,7 @@
     <MESSAGE value="Updated Login Ui" />
     <MESSAGE value="Ag-Grid Licence" />
     <MESSAGE value="Report MetaData &amp; left Panel changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Report MetaData &amp; left Panel changes" />
+    <MESSAGE value="Ui Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ui Changes" />
   </component>
 </project>
