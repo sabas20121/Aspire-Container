@@ -65,3 +65,17 @@ R
 "source/AspireReactApp/src/index.js,0\4\04e1785c0a4891db5761ea0ac0bb6f5605eed9d4
 E
 src/utils/S3Client.js,5\3\53df1fb56d91d2168563aa54c38e51cc8acf8ea6
+e
+5source/AspireReactApp/src/pages/reports/GridReport.js,a\6\a678d8fc2d8bd7349f1b437b46b974e8baf2f300
+Z
+*source/AspireReactApp/src/assets/mlogo.svg,a\c\ac3e380fe46585ee8508463570121dbd625236ff
+o
+?source/AspireReactApp/src/assets/metricstream-aispire-login.svg,e\b\eb76f403ecf54957bc044970220f2fe68dfc0763
+W
+'source/AspireReactApp/src/assets/m_logo,0\a\0aab96ea0a59f4388242bd5e90aa4e5fe6119f94
+[
++source/AspireReactApp/src/assets/m_logo.svg,0\b\0bd822e0276fca64d8b7ce29cf70b95d8d8be35d
+W
+'source/AspireReactApp/src/assets/m-logo,4\f\4f28159d5f018bc8cb49de3ac93ae2077f5b22ef
+[
++source/AspireReactApp/src/assets/m-logo.svg,8\d\8d5492d558b07c1030320f4d9dd1131db693b7d4

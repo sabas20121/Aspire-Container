@@ -16,6 +16,7 @@ import {
   Typography
 } from '@mui/material'
 
+import m from '../../assets/m-logo.svg'
 import ai from '../../assets/ai.svg'
 import aispire from '../../assets/aispire.svg'
 import metricstreamaispire from '../../assets/metricstream-aispire.svg'
@@ -72,7 +73,7 @@ let components = {
 const Branding = ({ open }) => {
   return (
     <Box id="brand" className={`Brand ${open ? '' : 'Brand-closed'}`}>
-      <img src={open ? metricstreamaispire : ai} alt="brand" width={open ? "208px" : "200px"} height={open ? "69px" : "48px"} />
+      <img src={open ? metricstreamaispire : m} alt="brand" width={open ? "208px" : "200px"} height={open ? "69px" : "48px"} />
     </Box>
   )
 }

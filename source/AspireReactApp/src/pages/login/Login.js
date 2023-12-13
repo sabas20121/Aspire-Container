@@ -26,8 +26,10 @@ import {
 // 	styled
 // } from "@mui/material/styles";
 
+import msaispirelogin from '../../assets/metricstream-aispire-login.svg';
 import aispire from '../../assets/aispire-login.svg';
 import laptop from '../../assets/laptop.png';
+import SELogo from '../../assets/Siemens_Energy_logo.png';
 
 export default function Login() {
 	const [formData, setFormData] = useState({
@@ -291,9 +293,14 @@ export default function Login() {
       </div>
       <div className="right-section">
         {/*<div className="right-content">*/}
-          <div className="logo-div">
-            <img src={aispire} alt="logo" width="242" height="78" />
-          </div>
+  		<div className='logo-container'>
+  			<div className="logo-div-Aispire">
+  				<img src={msaispirelogin} alt="logo" width="242" height="78" />
+  			</div>
+  			<div className="logo-div-prod">
+  				<img src={SELogo} alt="logo" width="242" height="78" />
+  			</div>
+  		</div>
           <form onSubmit={handleSubmit}>
             <div className="login-form">
               <div className="error-container">

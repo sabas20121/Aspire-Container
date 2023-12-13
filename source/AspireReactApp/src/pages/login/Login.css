@@ -81,13 +81,29 @@
   height: 80%;
 }
 
-.logo-div {
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  width: 584px;
+  height: 177px;
+}
+
+.logo-div-Aispire {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
-  width: 584px;
-  height: 177px;
+  width:80%;
+  height:100%;
+}
+
+.logo-div-prod {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width:80%;
+  height:100%;
 }
 
 .login-instruction {
