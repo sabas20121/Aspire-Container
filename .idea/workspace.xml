@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cec8fa52-e7fd-4273-ba35-a8bd49b506bc" name="Changes" comment="Ui Changes">
-      <change afterPath="$PROJECT_DIR$/source/AspireReactApp/src/assets/knowledge-graph-login-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/AspireReactApp/src/assets/laptop-graph.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/AspireReactApp/src/assets/MS_AiSPIRE_Login.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/AspireReactApp/src/components/Notifications/NotificationComponent.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/AspireReactApp/src/components/Notifications/NotificationComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/AspireReactApp/src/components/Notifications/NotificationComponent.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/AspireReactApp/src/services/NotificationHandler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/pages/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/pages/home/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/pages/login/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/pages/login/Login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/pages/login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/pages/login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/AspireReactApp/src/services/CookieManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/source/AspireReactApp/src/services/CookieManager.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -421,7 +426,7 @@
       <option name="project" value="LOCAL" />
       <updated>1702468560917</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

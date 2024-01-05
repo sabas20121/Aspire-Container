@@ -1,5 +1,6 @@
 import CryptoJS from 'crypto-js';
 import config from '../config/config';
+import jwt_decode from 'jwt-decode';
 
 const CookieManager = (function () {
 
@@ -14,8 +15,18 @@ const CookieManager = (function () {
   }
 
   function setCookie(name, value) {
+    let expTime = 3600;
+
+    if (name === 'OptimizerID') {
+      const decodedToken = jwt_decode(value);
+        if (decodedToken && decodedToken.exp) {
+        const expTimestamp = decodedToken.exp * 1000;
+        const expDate = new Date(expTimestamp);
+        expTime = Math.floor((expDate.getTime() - Date.now()) / 1000);
+      }
+    }
     const encryptedValue = encryptData(value);
-    document.cookie = name + "=" + encryptedValue + "; Max-Age=3600; SameSite=Strict";
+    document.cookie = `${name}=${encryptedValue}; Max-Age=${expTime}; SameSite=Strict`;
   }
 
   function encryptData(data) {

@@ -13,10 +13,9 @@ import { SessionManager } from '../../services/SessionManager.js';
 import Home from '../home/Home.js';
 import config from "../../config/config.js";
 
+import aispirelogin from '../../assets/MS_AiSPIRE_Login.svg'
 import msaispirelogin from '../../assets/metricstream-aispire-login.svg';
-import aispire from '../../assets/aispire-login.svg';
-//import laptop from '../../assets/laptop.png';
-import laptop from '../../assets/laptop-graph.png';
+
 import SELogo from '../../assets/Siemens_Energy_logo.svg';
 
 import './Login.css';
@@ -38,10 +37,7 @@ export default function Login() {
 	const [cognitoUserPoolId, setCognitoUserPoolId] = useState(null);
 	const [identityProvider, setIdentityProvider] = useState(null);
 	const [code, setCode] = useState(null);
-	// const [identityPoolId, setIdentityPoolId] = useState(null);
-	// const [identityProviderRegion, setIdentityProviderRegion] = useState(null);
-
-
+	const [isImageLoaded, setIsImageLoaded] = useState(false);
 
 
 	useEffect(() => {
@@ -58,15 +54,16 @@ export default function Login() {
 			fetchClientDetails(payload)
 			.then((ClientDetails) => {
 				setSSOFlag(ClientDetails.isSSOEnable);
+				const sessionCountDown = ClientDetails.SessionCountDown || 10;
+      			localStorage.setItem('SessionCountDown', sessionCountDown);
+				localStorage.setItem("cognitoClientId",ClientDetails.cognitoClientId);
+				localStorage.setItem('cognitoDomainUrl',ClientDetails.cognitoDomainUrl);
 				sessionStorage.setItem('customQSRegistrationEnabled', ClientDetails.customQSRegistrationEnabled);
-				// setQSRegistrationFlag(ClientDetails.customQSRegistrationEnabled);
 				setCognitoDomainUrl(ClientDetails.cognitoDomainUrl);
 				setCognitoClientId(ClientDetails.cognitoClientId);
 				setCognitoUserPoolId(ClientDetails.cognitoUserPoolId);
 				if (ClientDetails.isSSOEnable) {
 					setIdentityProvider(ClientDetails.identityProvider)
-					// setIdentityPoolId(ClientDetails.identityPoolId)
-					// setIdentityProviderRegion(ClientDetails.identityProviderRegion)
 				}
 				setClientFlag(true);
 			})
@@ -100,9 +97,10 @@ export default function Login() {
 
 			const data = await response.json();
 			const idToken = data?.data?.id_token;
+			const refreshToken = data?.data?.refresh_token;
 
-			if (idToken) {
-				handleAuthenticationSuccess(idToken);
+			if (idToken, refreshToken) {
+				handleAuthenticationSuccess(idToken, refreshToken);
 			}
 
 			} catch (error) {
@@ -186,8 +184,9 @@ export default function Login() {
 			});
 	};
 
-	const handleAuthenticationSuccess = (idToken) => {
+	const handleAuthenticationSuccess = (idToken, refreshToken) => {
 		CookieManager.setCookie('OptimizerID', idToken);
+		localStorage.setItem('refreshToken',refreshToken);
 		const customQSRegistrationEnabled = sessionStorage.getItem('customQSRegistrationEnabled');
 		if (customQSRegistrationEnabled) {
 			fetchQSUserDetails(idToken);
@@ -224,7 +223,8 @@ export default function Login() {
 		cognitoUser.authenticateUser(authenticationDetails, {
 			onSuccess: (session) => {
 				const idToken = session.idToken.jwtToken;
-				handleAuthenticationSuccess(idToken);
+				const refreshToken = session.refreshToken.jwtToken;
+				handleAuthenticationSuccess(idToken, refreshToken);
 			},
 			onFailure: (err) => {
 				console.error('Authentication failed:', err);
@@ -235,13 +235,12 @@ export default function Login() {
 				}
 			},
 
-			// newPasswordRequired: (userAttributes, requiredAttributes) => {},
 		});
 	};
 
 	const handleSsoLogin = () => {
 		if (isSSOEnable && clientFlag) {
-			const ssoRedirectUrl = `${cognitoDomainUrl}/oauth2/authorize?identity_provider=${identityProvider}&redirect_uri=${redirectUrl}&response_type=CODE&client_id=${cognitoClientId}&scope=email%20openid`
+			const ssoRedirectUrl = `${cognitoDomainUrl}/oauth2/authorize?identity_provider=${identityProvider}&redirect_uri=${redirectUrl}&response_type=CODE&client_id=${cognitoClientId}&scope=email%20openid%20profile`
 			window.location.href = ssoRedirectUrl;
 		}
 	};
@@ -260,26 +259,23 @@ export default function Login() {
 		}
 	}
 
+	const handleImageLoad = () => {
+		setIsImageLoaded(true);
+	  };
+
 	if (!clientFlag) {
 		return null;
 	}
 
-return (
-	  <div className="container">
+	return (
+	  <div className={`container ${isImageLoaded ? 'image-loaded' : ''}`}>
 		<div className="left-section">
-		  <div className="intro-div">
-			<text className="text-1">
-			  MetricStream AiSPIRE is the industry’s first <br />
-			  AI-powered, knowledge-centric GRC product.
-			</text>
-			<text className="text-2">
-			Leverage Cognitive Insights for Strategic <br />
-			  Decision-Making and Prioritization.
-			</text>
-			<text className="text-2">Safeguard Your GRC Program with the Right, Clean Data.</text>
-			<div className="rectangle" />
-		  </div>
-		  <img src={laptop} alt="Explorer" />
+		  <img
+			src={aispirelogin}
+			alt="AiSPIRE Login"
+			className="left-image"
+			onLoad={handleImageLoad}
+		  />
 		</div>
 		<div className="right-section">
 			<div className='right-containt'>
@@ -288,7 +284,7 @@ return (
 						<img src={msaispirelogin} alt="logo" width="242" height="78" />
 					</div>
 					<div className="logo-div-prod">
-						<img src={SELogo} alt="logo" width="155" />
+					    <img src={SELogo} alt="logo" width="155" />
 					</div>
 				</div>
 				<form onSubmit={handleSubmit}>
@@ -319,8 +315,21 @@ return (
 						/>
 					</div>
 					<div className="login-button-div">
-						<Button variant="filled" className="login-button" type="submit">
-						<Typography className="login-text">Login</Typography>
+						<Button
+							variant="contained"
+							sx={{
+								width: '200px',
+								height: '40px',
+								borderRadius: '10px',
+								backgroundColor: '#403759',
+								color: '#fff',
+								'&:hover': {
+								backgroundColor: '#2b263a',
+								},
+							}}
+							type="submit"
+							>
+							<Typography variant="body1">Login</Typography>
 						</Button>
 					</div>
 					{isSSOEnable && (
@@ -330,8 +339,22 @@ return (
 							<p className="sso-text">Or</p>
 							<div className="sso-line" />
 						</div>
-						<Button variant="filled" className="sso-button" onClick={handleSsoLogin}>
-							<Typography className="login-text">Sign in with SSO</Typography>
+
+						<Button
+							variant="contained"
+							sx={{
+								width: '100%',
+								height: '40px',
+								borderRadius: '10px',
+								backgroundColor: '#403759',
+								color: '#fff',
+								'&:hover': {
+								backgroundColor: '#2b263a',
+								},
+							}}
+							onClick={handleSsoLogin}
+							>
+							<Typography variant="body1">Sign in with SSO</Typography>
 						</Button>
 						</div>
 					)}

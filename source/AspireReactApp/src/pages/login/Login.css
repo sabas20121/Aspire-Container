@@ -9,7 +9,7 @@
   overflow: hidden;
 }
 
-.left-section {
+/* .left-section {
   display: flex;
   flex-direction: column;
   width: 50%;
@@ -21,9 +21,38 @@
       #958bb1 1.49%,
       #5b5275 52.8%,
       #403759 100%);
+} */
 
+.left-section{
+  display: none;
+  width: 50%;
+  height: 100%;
+  /* justify-content:center; */
 }
 
+.right-section {
+  display: none;
+  flex-direction: column;
+  align-items: right;
+  margin-bottom: 5%;
+  margin-top:5%;
+  width: 50%;
+  /* height: 50%; */
+}
+
+.left-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-loaded .right-section {
+  display: flex;
+}
+
+.image-loaded .left-section {
+  display: flex;
+}
 .intro-div {
   display: flex;
   flex-direction: column;
@@ -135,16 +164,6 @@
   flex-shrink: 0;
 }
 
-.right-section {
-  display: flex;
-  flex-direction: column;
-  align-items: right;
-  margin-bottom: 5%;
-  margin-top:5%;
-  width: 50%;
-  /* height: 50%; */
-}
-
 /* .right-containt {
   padding: auto;
 } */
@@ -219,7 +238,8 @@
 @media (min-width: 1200px) {
   .login-input .MuiOutlinedInput-input {
     width: 554px;
-    height: 100%;
+    height: 13px;
+    /* height: 100%; */
   }
   .login-button-div-sso .MuiButton-filled{
     width: 554px;

@@ -1,0 +1,43 @@
+
+.timeout-alert-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  .timeout-alert {
+    justify-content: space-between;
+    background-color: #fff;
+    font-family: Open Sans Variable;
+    padding: 20px;
+    text-align: center;
+    /* border: 1px solid #ccc; */
+    /* border-radius: 8px;  */
+  }
+
+  .timeout-alert p {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+  .timeout-alert button {
+    justify-content: space-between;
+    background-color: #399d96;
+    color: #fff;
+    font-family: Open Sans Variable;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 15px;
+  }
+
+  .timeout-alert button:first-child {
+    margin-right: 20%;
+  }
+  .timeout-alert button:hover {
+    background-color: #255653;
+  }
